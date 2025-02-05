@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
-        <footer className="bg-white border-y">
+        <footer className="bg-blue-500 border-y">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
@@ -63,6 +63,17 @@ export default function Footer() {
                                     <Link to="#" className="hover:underline">
                                         Terms &amp; Conditions
                                     </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Contact</h2>
+                            <ul className="text-gray-500 font-medium">
+                                <li className="mb-4">
+                                    <span>Email: akshit.sir@example.com</span>
+                                </li>
+                                <li>
+                                    <span>Phone: +1234567890</span>
                                 </li>
                             </ul>
                         </div>
