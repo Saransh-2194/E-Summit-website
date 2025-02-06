@@ -10,6 +10,7 @@ import Events from './components/Events/Events.jsx'
 import Speakers from './components/Speakers/Speakers.jsx'
 import Sponsers from './components/Sponsers/Sponsers.jsx'
 import Register from './components/Register/Register.jsx'
+import ScrollToTop from './components/Header/ScrollToTop';
 // import Register from './components/Register/Register.jsx'
 
 

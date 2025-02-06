@@ -1,43 +1,87 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Events() {
   const events = [
-    { name: "Event 1", image: "event1.jpg", link: "/register", details: "Join this amazing event!" },
-    { name: "Event 2", image: "event2.jpg", link: "/register", details: "Don't miss out!" },
-    { name: "Event 3", image: "event3.jpg", link: "/register", details: "An event like no other." },
-    { name: "Event 4", image: "event4.jpg", link: "/register", details: "Sign up today!" },
-    { name: "Event 5", image: "event5.jpg", link: "/register", details: "Experience the fun!" },
-    { name: "Event 6", image: "event6.jpg", link: "/register", details: "Be part of something big!" },
+    { name: "Event 1", image: "Dummy.jpeg", link: "/register", details: "Join this amazing event!" },
+    { name: "Event 2", image: "Dummy.jpeg", link: "/register", details: "Don't miss out!" },
+    { name: "Event 3", image: "Dummy.jpeg", link: "/register", details: "An event like no other." },
+    { name: "Event 4", image: "Dummy.jpeg", link: "/register", details: "Sign up today!" },
+    { name: "Event 5", image: "Dummy.jpeg", link: "/register", details: "Experience the fun!" },
+    { name: "Event 6", image: "Dummy.jpeg", link: "/register", details: "Be part of something big!" },
   ];
 
   const pageStyle = {
     fontFamily: "'Luckiest Guy', cursive",
+    backgroundImage: "url('/events-bg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+  };
+
+  const navigate = useNavigate();
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleNavigate = (link) => {
+    setIsExiting(true);
+    setTimeout(() => {
+      navigate(link);
+    }, 500);
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center mb-50" style={pageStyle}>
-      <img src="/events.png" alt="EVENTS" className="mt-20 mb-10" />
-      <div className="w-full max-w-7xl mx-8 px-4 md:px-6 lg:px-8">
-        {/* Increased gap without changing card size */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 mt-8 sm:mt-12 m-10">
-          {events.map((event, index) => (
-            <FlipCard key={index} event={event} />
-          ))}
-        </div>
-      </div>
-    </div>
+    <AnimatePresence>
+      {!isExiting && (
+        <motion.div
+          className="relative min-h-screen w-full flex flex-col items-center mb-50"
+          style={pageStyle}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.img
+            src="/events.png"
+            alt="EVENTS"
+            className="mt-30 mb-10"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          />
+          <div className="w-full max-w-7xl mx-8 px-4 md:px-8 lg:px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mt-10 sm:mt-12 m-10">
+              {events.map((event, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <FlipCard event={event} handleNavigate={handleNavigate} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
 // Flip Card Component
-function FlipCard({ event }) {
+function FlipCard({ event, handleNavigate }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div
-      className="relative w-64 h-64 cursor-pointer"
+      className="relative w-80 h-80 cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
+      onClick={() => handleNavigate(event.link)}
     >
       {/* Shadow Layer (Moved to the left) */}
       <div className="absolute w-full h-full bg-black rounded-xl -translate-x-3 translate-y-3"></div>
@@ -58,9 +102,9 @@ function FlipCard({ event }) {
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full bg-yellow-300 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
+        <div className="absolute w-full h-full bg-pink-400 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
           <p className="text-sm">{event.details}</p>
-          <a href={event.link} className="mt-4 px-4 py-2 bg-black text-white rounded-lg">Register</a>
+          <a href={event.link} className="mt-4 px-4 py-2 bg-white text-black rounded-lg">Register</a>
         </div>
       </div>
     </div>

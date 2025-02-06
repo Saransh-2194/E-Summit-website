@@ -1,6 +1,6 @@
 import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sponsers() {
   const infiniteSponsers = [
@@ -18,26 +18,40 @@ export default function Sponsers() {
   };
 
   return (
-    <div className="relative min-h-screen w-full">
-      <div className="relative justify-center items-center flex flex-col">
-        <img src="/sponsers.png" alt="SPONSERS" className="mt-20 mb-10"/>
-      </div>
-      <div className="mt-12 sm:mt-16">
-        <motion.h2
-          className="text-xl md:text-2xl lg:text-4xl text-green-200 font-['Exo_2'] font-bold mb-4 md:mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          animate={titleControls}
-          transition={{ duration: 0.75}}
+    <AnimatePresence>
+      <motion.div
+        className="relative min-h-screen w-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="relative justify-center items-center flex flex-col"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-        </motion.h2>
-        <InfiniteMovingCards 
-          items={infiniteSponsers} 
-          direction="left" 
-          speed="normal" 
-          pauseOnHover={true} 
-          className="w-full overflow-hidden"
-        />
-      </div>
-    </div>
+          <img src="/sponsers.png" alt="SPONSORS" className="mt-20 mb-10"/>
+        </motion.div>
+        <div className="mt-12 sm:mt-16">
+          <motion.h2
+            className="text-xl md:text-2xl lg:text-4xl text-green-200 font-['Exo_2'] font-bold mb-4 md:mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={titleControls}
+            transition={{ duration: 0.75}}
+          >
+          </motion.h2>
+          <InfiniteMovingCards 
+            items={infiniteSponsers} 
+            direction="left" 
+            speed="normal" 
+            pauseOnHover={true} 
+            className="w-full overflow-hidden"
+          />
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
