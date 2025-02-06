@@ -1,0 +1,41 @@
+/* Header.css */
+
+/* Apply Luckiest Guy to header text */
+.header-text {
+  font-family: 'Luckiest Guy', cursive;
+  color: white;
+}
+
+/* Apply Roboto to all headings */
+h1, h2, h3, h4, h5, h6, .font-Exo {
+  font-family: 'Luckiest Guy', cursive;
+  
+}
+
+/* Ensure the navigation bar font is unchanged or use specific font-sans for nav links */
+.nav-links {
+  font-family: 'Luckiest Guy', cursive;
+  position: relative; /* To position the underline */
+  display: inline-block; /* Ensures underline is positioned relative to text */
+  color: white;
+}
+
+/* Add hover animation */
+.nav-links::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background: linear-gradient(to right, #f6e05e, #f6e05e); /* Yellow gradient */
+  transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.nav-links:hover::after {
+  width: 100%; /* Expands the underline to the full width on hover */
+}
+
+.nav-links:hover {
+  color: #f6e05e; /* Change text color on hover */
+}
