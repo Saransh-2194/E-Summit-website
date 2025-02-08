@@ -1,142 +1,178 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const teamMembers = [
+    {
+        name: "Akshit Sharma",
+        role: "Coordinator",
+        description: "Leading with vision and purpose.",
+        query: "Overall Coordinator",
+        image: "",
+        email: "",
+        linkedin: "https://www.linkedin.com/in/actuallyakshit/"
+      },
+      {
+        name: "Geetansh Singh",
+        role: "Coordinator",
+        description: "Empowering the team with excellence.",
+        query: "Overall Coordinator",
+        image: "",
+        email: "",
+        linkedin: "https://www.linkedin.com/in/geetansh-singh-/"
+      },
+      {
+        name: "Sanya Jain",
+        role: "Public Relations Head",
+        description: "Building bridges with the world.",
+        query: "Events and PR",
+          image: "",
+          email: "",
+          linkedin: "https://www.linkedin.com/in/jainsanya/"
+      },
+      {
+          name: "Priyanshi Jain",
+          role: "Corporate Relations Head",
+        description: "Building bridges with industry.",
+        query: "Speakers",
+          image: "",
+          email: "",
+          linkedin: "https://www.linkedin.com/in/jain-priyanshii/"
+        },
+        {
+          name: "Akash Gupta",
+          role: "Finance & Sponsorships Head",
+          query: "Sponsorships",
+            image: "",
+            email: "",
+            linkedin: "https://www.linkedin.com/in/akash-gupta-ai-ml/"
+        },
+        {
+          name: "Saransh Agarwal",
+          role: "Design & Tech team member",
+          description: "Crafting the digital experience.",
+          query: "Website and Technical",
+            image: "",
+            email: "",
+            linkedin: "https://www.linkedin.com/in/saransh-ag21/"
+        
+        },
+        {
+          name: "Mithas Aggarwal",
+          role: "Design Head",
+          description: "Crafting the digital experience.",
+          query: "Design and Technical",
+            image: "",
+            email: "",
+            linkedin: "https://www.linkedin.com/in/mithasaggarwal-/"
+        },
+      {
+        name: "Kanishka Sharma",
+        role: "Social Media Head",
+        description: "Sharing experiences with the world.",
+        query: "Social Media",
+          image: "",
+          email: "",
+          linkedin: "https://www.linkedin.com/in/kanishka-sharma-b6994a256/"
+      },
+      {
+        name: "Akshit Sharma",
+        role: "Student Mentor",
+        description: "Guiding the team with experience.",
+        query: "Website and Technical",
+          image: "",
+          email: "",
+          linkedin: "https://www.linkedin.com/in/akshit-sharmaa/"
+      },
+      {
+        name: "Ashmi Sharma",
+        role: "Events & Operations Head",
+        description: "Ensuring seamless execution.",
+        query: "Events and PR",
+        image: "/./Council/Ashmi.jpg",
+        email: "sharmaashmi142004@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ashmi-sharma42/",
+      
+      }
+];
+
+const groupedTeamMembers = teamMembers.reduce((acc, member) => {
+  if (!acc[member.query]) {
+    acc[member.query] = [];
+  }
+  acc[member.query].push(member);
+  return acc;
+}, {});
 
 export default function Contact() {
-    return (
-        <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
-            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div className="mt-8 overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg">
-                            <h1 className="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
-                                Get in touch: 
-                            </h1>
-                            <p className="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
-                                Fill in the form to start a conversation
-                            </p>
+  return (
+    <div className="container mx-auto px-4 py-8 pt-30">
+      <div className="flex justify-center mb-12">
+        <motion.img
+          src="/team.png"
+          alt="Our Team"
+          className="h-12 md:h-16 lg:h-22"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </div>
+      {Object.keys(groupedTeamMembers).map((query, index) => (
+        <div key={index} className="mb-16">
+          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+            {query} {query !== "Overall Coordinator" ? "related Queries" : ""}
+          </h1>
+          <div className="flex flex-wrap justify-center gap-12">
+            {groupedTeamMembers[query].map((member, index) => (
+              <motion.div
+                key={index}
+                className={`bg-white p-8 rounded-lg w-72 shadow-lg hover:shadow-2xl transition-shadow duration-300 relative border-black border-4 m-8`}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                style={{ boxShadow: '-20px 20px 0px 0px black' }}
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <h3 className="text-xl font-semibold mt-4 font-['Exo_2'] text-gray-800">
+                  {member.name}
+                </h3>
+                <p className="text-gray-600 font-['Exo_2']">{member.role}</p>
+                <p className="mt-2 text-gray-500 font-['Exo_2'] text-sm">
+                  {member.description}
+                </p>
 
-                            <div className="flex items-center mt-8 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                    />
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    Acme Inc, Street, State, Postal Code
-                                </div>
-                            </div>
-
-                            <div className="flex items-center mt-4 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    +44 1234567890
-                                </div>
-                            </div>
-
-                            <div className="flex items-center mt-2 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    info@acme.org
-                                </div>
-                            </div>
-                        </div>
-
-                        <form className="p-6 flex flex-col justify-center">
-                            <div className="flex flex-col">
-                                <label for="name" className="hidden">
-                                    Full Name
-                                </label>
-                                <input
-                                    type="name"
-                                    name="name"
-                                    id="name"
-                                    placeholder="Full Name"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="email" className="hidden">
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Email"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="tel" className="hidden">
-                                    Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    name="tel"
-                                    id="tel"
-                                    placeholder="Telephone Number"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    </div>
+                {/* Hover Gradient & Icons */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-transparent rounded-br-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 p-4 flex gap-4 items-center">
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        src="/linkedin.png"
+                        alt="LinkedIn"
+                        className="w-8 h-8"
+                      />
+                    </a>
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}&su=Hello%20${member.name}&body=Hi%20${member.name},`} target="_blank" rel="noopener noreferrer"
+                    >
+                      <img src="/gmail.png" alt="Email" className="w-8 h-8" />
+                    </a>
+                  </div>
                 </div>
-            </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }

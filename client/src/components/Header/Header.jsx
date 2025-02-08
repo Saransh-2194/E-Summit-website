@@ -57,14 +57,6 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <img src="events.png" alt="SIAM Logo" className="h-8 w-auto" />
         </Link>
-        <div className="flex items-center lg:order-2">
-            <Link
-                to="/register"
-                className="text-blue bg-white hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-400 font-medium rounded-xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-            >
-                Register
-            </Link>
-        </div>
 
         {/* Expanded Navigation Links */}
         <div className="hidden lg:flex flex-grow justify-center space-x-16 items-center py-2">
@@ -126,12 +118,12 @@ const Header = () => {
                   }`
                 }
               >
-                Sponsers
+                Sponsors
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/contact"
+                to="/itenary"
                 onClick={() => handleButtonClick("/contact")}
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
@@ -141,7 +133,7 @@ const Header = () => {
                   }`
                 }
               >
-                Contact Us
+                Itenary
               </NavLink>
             </li>
           </ul>
@@ -195,29 +187,38 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="/events"
               onClick={() => handleButtonClick("/about")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
-              About
+              Events
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/team"
+              to="/speakers"
               onClick={() => handleButtonClick("/team")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
-              Team
+              Speaker
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/sponsers"
               onClick={() => handleButtonClick("/contact")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
-              Contact
+              Sponsors
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/itenary"
+              onClick={() => handleButtonClick("/contact")}
+              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+            >
+              Itenary
             </NavLink>
           </li>
         </ul>

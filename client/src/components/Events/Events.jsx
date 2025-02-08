@@ -42,15 +42,16 @@ export default function Events() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.img
-            src="/events.png"
-            alt="EVENTS"
-            className="mt-30 mb-10"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          />
+        <div className="flex justify-center mb-12 mt-30">
+        <motion.img
+          src="/events.png"
+          alt="EVENTS"
+          className="h-12 md:h-16 lg:h-22"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
+        </div>
           <div className="w-full max-w-7xl mx-8 px-4 md:px-8 lg:px-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mt-10 sm:mt-12 m-10">
               {events.map((event, index) => (

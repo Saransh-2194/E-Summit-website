@@ -33,17 +33,18 @@ export default function Speakers() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
+        <div className="flex justify-center mb-12 mt-20">
         <motion.img
           src="/speakers.png"
           alt="SPEAKERS"
-          className="mt-20 mb-10 max-w-full"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          className="h-12 md:h-16 lg:h-22"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 w-full max-w-6xl mt-15 ">
           {speakers.map((speaker, index) => (
             <motion.div
@@ -64,7 +65,7 @@ export default function Speakers() {
               />
               <h3 className="text-xl font-semibold text-center mt-4">{speaker.name}</h3>
               <p className="text-center text-gray-500 text-lg">{speaker.date}</p>
-              <div className="flex justify-center gap-4 mt-2">
+              <div className="flex justify-center gap-4 mt-2 ">
                 <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
                   <img src="/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
                 </a>

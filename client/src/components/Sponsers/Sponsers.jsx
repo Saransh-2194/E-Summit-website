@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sponsers() {
   const infiniteSponsers = [
-    { name: 'Sponser 1', image: 'sponser1.jpg' },
-    { name: 'Sponser 2', image: 'sponser2.jpg' },
-    { name: 'Sponser 3', image: 'sponser3.jpg' },
-    { name: 'Sponser 4', image: 'sponser3.jpg' },
-    { name: 'Sponser 5', image: 'sponser3.jpg' },
-    { name: 'Sponser 6', image: 'sponser3.jpg' },
+    { name: 'Sponsor 1', image: 'sponsors-dummy.jpg' },
+    { name: 'Sponsor 2', image: 'sponsors-dummy.jpg' },
+    { name: 'Sponsor 3', image: 'sponsors-dummy.jpg' },
+    { name: 'Sponsor 4', image: 'sponsors-dummy.jpg' },
+    { name: 'Sponsor 5', image: 'sponsors-dummy.jpg' },
+    { name: 'Sponsor 6', image: 'sponsors-dummy.jpg' },
   ];
 
   const titleControls = {
@@ -26,16 +26,17 @@ export default function Sponsers() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div
-          className="relative justify-center items-center flex flex-col"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <img src="/sponsers.png" alt="SPONSORS" className="mt-20 mb-10"/>
-        </motion.div>
-        <div className="mt-12 sm:mt-16">
+        <div className="flex justify-center mb-12 mt-30">
+        <motion.img
+          src="/sponsers.png"
+          alt="SPONSORS"
+          className="h-12 md:h-20 lg:h-26"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
+        </div>
+        <div className="flex flex-col items-center">
           <motion.h2
             className="text-xl md:text-2xl lg:text-4xl text-green-200 font-['Exo_2'] font-bold mb-4 md:mb-8"
             initial={{ opacity: 0, y: 30 }}
@@ -49,6 +50,8 @@ export default function Sponsers() {
             speed="normal" 
             pauseOnHover={true} 
             className="w-full overflow-hidden"
+            itemClassName="flex-shrink-0 w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80"
+            imageClassName="object-cover w-relative h-relative" // Ensure the image fits the card
           />
         </div>
       </motion.div>
