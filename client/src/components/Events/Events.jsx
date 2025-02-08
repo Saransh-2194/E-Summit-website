@@ -32,44 +32,49 @@ export default function Events() {
   };
 
   return (
-    <AnimatePresence>
-      {!isExiting && (
-        <motion.div
-          className="relative min-h-screen w-full flex flex-col items-center mb-50"
-          style={pageStyle}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-        <div className="flex justify-center mb-12 mt-30">
-        <motion.img
-          src="/events.png"
-          alt="EVENTS"
-          className="h-12 md:h-16 lg:h-22"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        />
-        </div>
-          <div className="w-full max-w-7xl mx-8 px-4 md:px-8 lg:px-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mt-10 sm:mt-12 m-10">
-              {events.map((event, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <FlipCard event={event} handleNavigate={handleNavigate} />
-                </motion.div>
-              ))}
+    <div>
+      <AnimatePresence>
+        {!isExiting && (
+          <motion.div
+            className="relative min-h-screen w-full flex flex-col items-center mb-50"
+            style={pageStyle}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              className="flex justify-center mb-12 mt-30"
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: false }}
+            >
+              <motion.img
+                src="/events.png"
+                alt="EVENTS"
+                className="h-12 md:h-16 lg:h-22"
+              />
+            </motion.div>
+            <div className="w-full max-w-7xl mx-8 px-4 md:px-8 lg:px-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mt-10 sm:mt-12 m-10">
+                {events.map((event, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: false }}
+                  >
+                    <FlipCard event={event} handleNavigate={handleNavigate} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
@@ -103,7 +108,7 @@ function FlipCard({ event, handleNavigate }) {
         </div>
 
         {/* Back Side */}
-        <div className="absolute w-full h-full bg-pink-400 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
+        <div className="absolute w-full h-full bg-yellow-300 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
           <p className="text-sm">{event.details}</p>
           <a href={event.link} className="mt-4 px-4 py-2 bg-white text-black rounded-lg">Register</a>
         </div>

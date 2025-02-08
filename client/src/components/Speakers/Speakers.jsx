@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Speakers() {
@@ -35,16 +35,19 @@ export default function Speakers() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="flex justify-center mb-12 mt-20">
-        <motion.img
-          src="/speakers.png"
-          alt="SPEAKERS"
-          className="h-12 md:h-16 lg:h-22"
+        <motion.div
+          className="flex justify-center mb-12 mt-20"
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-        />
-        </div>
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/speakers.png"
+            alt="SPEAKERS"
+            className="h-12 md:h-16 lg:h-22"
+          />
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 w-full max-w-6xl mt-15 ">
           {speakers.map((speaker, index) => (
             <motion.div
@@ -55,14 +58,19 @@ export default function Speakers() {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               onClick={() => handleExpand(index)}
             >
-              <img
-                src={speaker.image}
-                alt={speaker.name}
-                className="w-full h-48 md:h-56 object-cover rounded-lg cursor-pointer"
-              />
+              <div className="relative group">
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="w-full h-48 md:h-56 object-cover rounded-lg transition duration-300 group-hover:blur-lg group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-lg font-bold text-center p-4 rounded-md">{speaker.description}</p>
+                </div>
+              </div>
               <h3 className="text-xl font-semibold text-center mt-4">{speaker.name}</h3>
               <p className="text-center text-gray-500 text-lg">{speaker.date}</p>
               <div className="flex justify-center gap-4 mt-2 ">
@@ -73,24 +81,6 @@ export default function Speakers() {
                   <img src="/twitter.png" alt="Twitter" className="w-9 h-9" />
                 </a>
               </div>
-              {expandedCard === index && (
-                <motion.div
-                  className="absolute inset-0 bg-black text-white p-6 rounded-lg shadow-4xl z-20 flex flex-col items-center justify-center"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <h2 className="text-3xl font-bold mb-4">{speaker.name}</h2>
-                  <p className="text-lg mb-6">{speaker.description}</p>
-                  <button
-                    onClick={() => handleExpand(index)}
-                    className="px-4 py-2 text-sm bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-                  >
-                    Close
-                  </button>
-                </motion.div>
-              )}
             </motion.div>
           ))}
         </div>

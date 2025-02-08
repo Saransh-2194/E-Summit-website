@@ -56,17 +56,17 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <Link to="#" className="text-white hover:underline">
+                  <Link to="/privacy" className="text-white hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4"> {/* Added padding here */}
-                  <Link to="#" className="text-white hover:underline">
+                  <Link to="/tnc" className="text-white hover:underline">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="text-white hover:underline">
+                  <Link to="refund" className="text-white hover:underline">
                     Refund &amp; Cancellation Policy
                   </Link>
                 </li>

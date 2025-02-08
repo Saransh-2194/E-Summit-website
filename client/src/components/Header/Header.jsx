@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css"; // Import the CSS file for styling
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const location = useLocation();
   const navigate = useNavigate();
   let lastScrollY = window.scrollY;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleButtonClick = (route) => {
-    navigate(route); // Navigate without delay
   };
 
   const handleScroll = () => {
@@ -50,6 +47,24 @@ const Header = () => {
     color: "white",
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNavigation = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection(id);
+      }, 100); // Adjust the delay as needed
+    } else {
+      scrollToSection(id);
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
@@ -64,7 +79,6 @@ const Header = () => {
             <li>
               <NavLink
                 to="/"
-                onClick={() => handleButtonClick("/")}
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
                     isActive
@@ -77,54 +91,32 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/events"
-                onClick={() => handleButtonClick("/events")}
-                className={({ isActive }) =>
-                  `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive
-                      ? "text-white font-medium hover:text-green-300 transform scale-105"
-                      : "hover:text-green-200"
-                  }`
-                }
+              <button
+                onClick={() => handleNavigation("events-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
               >
                 Events
-              </NavLink>
+              </button>
             </li>
             <li>
-              <NavLink
-                to="/speakers"
-                onClick={() => handleButtonClick("/speakers")}
-                className={({ isActive }) =>
-                  `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive
-                      ? "text-white font-medium hover:text-green-300 transform scale-105"
-                      : "hover:text-green-200"
-                  }`
-                }
+              <button
+                onClick={() => handleNavigation("speakers-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
               >
                 Speakers
-              </NavLink>
+              </button>
             </li>
             <li>
-              <NavLink
-                to="/sponsers"
-                onClick={() => handleButtonClick("/sponsers")}
-                className={({ isActive }) =>
-                  `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive
-                      ? "text-white font-medium hover:text-green-300 transform scale-105"
-                      : "hover:text-green-200"
-                  }`
-                }
+              <button
+                onClick={() => handleNavigation("sponsers-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
               >
                 Sponsors
-              </NavLink>
+              </button>
             </li>
             <li>
               <NavLink
-                to="/itenary"
-                onClick={() => handleButtonClick("/contact")}
+                to="/contact"
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
                     isActive
@@ -133,7 +125,7 @@ const Header = () => {
                   }`
                 }
               >
-                Itenary
+                Contact Us
               </NavLink>
             </li>
           </ul>
@@ -179,46 +171,41 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              onClick={() => handleButtonClick("/")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/events"
-              onClick={() => handleButtonClick("/about")}
+            <button
+              onClick={() => handleNavigation("events-content")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
               Events
-            </NavLink>
+            </button>
           </li>
           <li>
-            <NavLink
-              to="/speakers"
-              onClick={() => handleButtonClick("/team")}
+            <button
+              onClick={() => handleNavigation("speakers-content")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
-              Speaker
-            </NavLink>
+              Speakers
+            </button>
           </li>
           <li>
-            <NavLink
-              to="/sponsers"
-              onClick={() => handleButtonClick("/contact")}
+            <button
+              onClick={() => handleNavigation("sponsers-content")}
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
               Sponsors
-            </NavLink>
+            </button>
           </li>
           <li>
             <NavLink
-              to="/itenary"
-              onClick={() => handleButtonClick("/contact")}
+              to="/contact"
               className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
             >
-              Itenary
+              Contact Us
             </NavLink>
           </li>
         </ul>

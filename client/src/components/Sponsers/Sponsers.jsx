@@ -26,16 +26,19 @@ export default function Sponsers() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex justify-center mb-12 mt-30">
-        <motion.img
-          src="/sponsers.png"
-          alt="SPONSORS"
-          className="h-12 md:h-20 lg:h-26"
+        <motion.div
+          className="flex justify-center mb-12 mt-30"
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-        />
-        </div>
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/sponsers.png"
+            alt="SPONSORS"
+            className="h-12 md:h-20 lg:h-26"
+          />
+        </motion.div>
         <div className="flex flex-col items-center">
           <motion.h2
             className="text-xl md:text-2xl lg:text-4xl text-green-200 font-['Exo_2'] font-bold mb-4 md:mb-8"
@@ -52,6 +55,7 @@ export default function Sponsers() {
             className="w-full overflow-hidden"
             itemClassName="flex-shrink-0 w-60 h-60 md:w-64 md:h-64 lg:w-80 lg:h-80"
             imageClassName="object-cover w-relative h-relative" // Ensure the image fits the card
+            triggerOnScroll={true} // Add this prop to trigger animation on scroll
           />
         </div>
       </motion.div>

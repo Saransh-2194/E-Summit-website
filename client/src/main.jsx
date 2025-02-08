@@ -11,6 +11,9 @@ import Speakers from './components/Speakers/Speakers.jsx'
 import Sponsers from './components/Sponsers/Sponsers.jsx'
 import Register from './components/Register/Register.jsx'
 import ScrollToTop from './components/Header/ScrollToTop';
+import Privacy from './components/Legal/Privacy.jsx'
+import TnC from './components/Legal/TnC.jsx'
+import Refund from './components/Legal/Refund.jsx'
 // import Register from './components/Register/Register.jsx'
 
 
@@ -22,7 +25,9 @@ const router = createBrowserRouter(
       <Route path='/speakers' element={<Speakers />} />
       <Route path='/sponsers' element={<Sponsers />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/register' element={<Register />} />
+      <Route path='/privacy' element={<Privacy />} />
+      <Route path='/tnc' element={<TnC />} />
+      <Route path='/refund' element={<Refund />} />
 
     </Route>
   )
