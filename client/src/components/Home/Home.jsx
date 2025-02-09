@@ -11,12 +11,14 @@ export default function Home() {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     minHeight: "100vh",
+    marginTop: "3vh",
+    marginBottom: "1vh",
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="header-section" style={headerStyle}>
-        <div className="flex justify-center mb-12">
+        <div className="flex items-center justify-center h-full">
           <motion.img
             src="/E-summit’25.png"
             alt="Home"
