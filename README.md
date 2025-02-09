@@ -1,4 +1,4 @@
-# 🏆 E-Summit 2025 Website  
+# 🏆 TIED-C E-Summit 2025 Website  
 
 Welcome to the **E-Summit 2025** official website repository! This is an informational website designed to showcase event details, speakers, sponsors, and schedules for the upcoming entrepreneurship summit.
 
