@@ -104,8 +104,16 @@ const groupedTeamMembers = teamMembers.reduce((acc, member) => {
 }, {});
 
 export default function Contact() {
+  const pageStyle = {
+    backgroundImage: "url('/speakers-bg.png')",
+    backgroundSize: "contain",
+    backgroundPosition: "top",
+    // backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8 pt-30">
+    <div className="container mx-auto px-4 py-8 pt-30" style={pageStyle}>
       <div className="flex justify-center mb-12">
         <motion.img
           src="/team.png"

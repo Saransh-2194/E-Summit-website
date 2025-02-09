@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import bgImage from '/Bg.png';
 
-export default function Events() {
+export default function Register() {
   const events = [
     { name: 'Event 1', image: 'event1.jpg' },
     { name: 'Event 2', image: 'event2.jpg' },

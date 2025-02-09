@@ -14,7 +14,7 @@ export default function Speakers() {
 
   const pageStyle = {
     fontFamily: "'Luckiest Guy', cursive",
-    backgroundImage: "url('/speakers-bg.png')",
+    backgroundImage: "url('/home-bg.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

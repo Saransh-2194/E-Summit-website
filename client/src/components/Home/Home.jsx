@@ -1,44 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Events from '../Events/Events';
 import Speakers from '../Speakers/Speakers';
 import Sponsers from '../Sponsers/Sponsers';
 
 export default function Home() {
-  const headerStyle = {
-    backgroundImage: "url('/home-bg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
-    marginTop: "3vh",
-    marginBottom: "1vh",
-  };
+  const [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setAnimate(true);
+      } else {
+        setAnimate(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="header-section" style={headerStyle}>
-        <div className="flex items-center justify-center h-full">
-          <motion.img
-            src="/E-summit’25.png"
-            alt="Home"
-            className="h-48 md:h-64 lg:h-80"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
-        <div id="home-content" className="mb-16">
-          {/* Home page content */}
-        </div>
+    <div className="relative">
+      <div 
+        className="relative flex justify-center items-center h-full mt-14.5"
+        style={{
+          backgroundImage: "url('/home-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Cloud image in center */}
+        <motion.img
+          src="/E-summit’25.png"
+          alt="E-Summit 2025"
+          className="w-[70%] md:w-[60%] lg:w-[90%] max-w-[500%] ml-20"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={animate ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.5 }}
+        />
       </div>
-      <div id="events-content" className="mb-16">
+
+      {/* Other sections */}
+      <div id="events-content" className="mt-50">
         <Events />
       </div>
-      <div id="speakers-content" className="mb-16">
+      <div id="speakers-content">
         <Speakers />
       </div>
-      <div id="sponsers-content" className="mb-16">
+      <div id="sponsers-content">
         <Sponsers />
       </div>
     </div>

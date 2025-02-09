@@ -42,7 +42,7 @@ export default function Footer() {
                     className="text-white hover:underline"
                     rel="noreferrer"
                   >
-                    Contact Us
+                    Our Team
                   </a>
                 </li>
                 <li>

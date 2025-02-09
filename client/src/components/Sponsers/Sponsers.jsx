@@ -17,10 +17,19 @@ export default function Sponsers() {
     y: 0,
   };
 
+  const pageStyle = {
+    backgroundImage: "url('/events-bg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    minHeight: "100vh",
+  };
+
   return (
     <AnimatePresence>
       <motion.div
-        className="relative min-h-screen w-full"
+        className="relative min-h-screen w-full mt-65 flex flex-col items-center"
+        style={pageStyle}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
