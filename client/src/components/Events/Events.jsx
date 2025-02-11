@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Events() {
   const events = [
@@ -12,85 +11,77 @@ export default function Events() {
     { name: "Event 6", image: "Dummy.jpeg", link: "/register", details: "Be part of something big!" },
   ];
 
-  const pageStyle = {
-    fontFamily: "'Luckiest Guy', cursive",
-    backgroundImage: "url('/events-bg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
-  };
-
   const navigate = useNavigate();
-  const [isExiting, setIsExiting] = useState(false);
 
-  const handleNavigate = (link) => {
-    setIsExiting(true);
-    setTimeout(() => {
-      navigate(link);
-    }, 500);
+  const cardTextStyle = {
+    fontFamily: "'Comic Neue', cursive",
   };
 
   return (
-    <div>
-      <AnimatePresence>
-        {!isExiting && (
-          <motion.div
-            className="relative min-h-screen w-full flex flex-col items-center mb-50"
-            style={pageStyle}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <motion.div
-              className="flex justify-center mb-12 mt-30"
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: false }}
-            >
-              <motion.img
-                src="/events.png"
-                alt="EVENTS"
-                className="h-12 md:h-16 lg:h-22"
-              />
-            </motion.div>
-            <div className="w-full max-w-7xl mx-8 px-4 md:px-8 lg:px-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mt-10 sm:mt-12 m-10">
-                {events.map((event, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: false }}
-                  >
-                    <FlipCard event={event} handleNavigate={handleNavigate} />
-                  </motion.div>
-                ))}
-              </div>
+    <div className="relative min-h-screen w-full flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/')" }}>
+      <div className="flex justify-center mb-12 mt-10">
+        <img src="/events.png" alt="EVENTS" className="h-12 md:h-16 lg:h-22" />
+      </div>
+      <div className="max-w-7xl mx-8 px-10 md:px-8 lg:px-0">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-20 mt-10 sm:mt-12">
+          {events.map((event, index) => (
+            <div key={index}>
+              <EventCard event={event} navigate={navigate} cardTextStyle={cardTextStyle} />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
 
-// Flip Card Component
-function FlipCard({ event, handleNavigate }) {
+// Event Card Component
+function EventCard({ event, navigate, cardTextStyle }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  return (
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleCardClick = (e) => {
+    e.stopPropagation();
+    if (isMobile) {
+      navigate(event.link);
+    } else {
+      setIsFlipped((prev) => !prev);
+    }
+  };
+
+  return isMobile ? (
     <div
-      className="relative w-80 h-80 cursor-pointer"
+      className="relative w-60 h-72 sm:w-80 sm:h-96 cursor-pointer bg-white border-4 border-black rounded-xl shadow-lg flex flex-col items-center p-4"
+      onClick={handleCardClick}
+      style={{ boxShadow: '-20px 20px 0px 0px black' }}
+    >
+      {/* Shadow */}
+      <div className="absolute w-full h-full bg-black rounded-xl -z-10 translate-x-2 translate-y-2"></div>
+
+      {/* Image */}
+      <img src={event.image} alt={event.name} className="w-full h-40 sm:h-48 object-cover rounded-lg mb-3" />
+      
+      {/* Event Details */}
+      <h3 className="text-md sm:text-xl font-bold" style={cardTextStyle}>{event.name}</h3>
+      <p className="text-xs sm:text-sm mt-1 text-gray-700 text-center" style={cardTextStyle}>{event.details}</p>
+    </div>
+  ) : (
+    <div
+      className="relative w-60 h-72 sm:w-80 sm:h-96 cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onClick={() => handleNavigate(event.link)}
+      onClick={handleCardClick}
     >
       {/* Shadow Layer (Moved to the left) */}
-      <div className="absolute w-full h-full bg-black rounded-xl -translate-x-3 translate-y-3"></div>
+      <div className="absolute w-full h-full bg-black rounded-xl -translate-x-4 translate-y-4"></div>
 
       {/* Rotating Card */}
       <div
@@ -103,14 +94,14 @@ function FlipCard({ event, handleNavigate }) {
       >
         {/* Front Side */}
         <div className="absolute w-full h-full flex flex-col items-center justify-center p-4 backface-hidden">
-          <img src={event.image} alt={event.name} className="w-full h-40 object-cover rounded-lg mb-6" />
-          <h3 className="text-lg font-bold">{event.name}</h3>
+          <img src={event.image} alt={event.name} className="w-full h-36 sm:h-48 object-cover rounded-lg mb-3" />
+          <h3 className="text-md sm:text-xl font-bold" style={cardTextStyle}>{event.name}</h3>
         </div>
 
         {/* Back Side */}
         <div className="absolute w-full h-full bg-yellow-300 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
-          <p className="text-sm">{event.details}</p>
-          <a href={event.link} className="mt-4 px-4 py-2 bg-white text-black rounded-lg">Register</a>
+          <p className="text-xs sm:text-sm" style={cardTextStyle}>{event.details}</p>
+          <a href={event.link} className="mt-2 sm:mt-4 px-2 sm:px-4 py-1 sm:py-2 bg-white text-black rounded-lg">Register</a>
         </div>
       </div>
     </div>

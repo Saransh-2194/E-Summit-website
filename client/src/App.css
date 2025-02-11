@@ -1,21 +1,45 @@
-@keyframes appear{
-    from{
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+@keyframes appear {
+    from {
         opacity: 0;
         scale: 0.5;
     }
-    to{
+    to {
         opacity: 1;
         scale: 1;
     }
 }
-.block{
+
+.block {
     animation: appear 5s linear;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(168, 168, 168);
 }
-a:hover{
+
+a:hover {
     color: rgb(102, 159, 245);
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee div {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee 60s linear 0s infinite normal none running;
+  animation-delay: 0s;
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }

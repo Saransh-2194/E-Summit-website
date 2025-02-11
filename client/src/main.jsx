@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact.jsx'
 import Events from './components/Events/Events.jsx'
 import Speakers from './components/Speakers/Speakers.jsx'
 import Sponsers from './components/Sponsers/Sponsers.jsx'
+import Sponsors from './components/Sponsors/Sponsors.jsx'
 import Register from './components/Register/Register.jsx'
 import ScrollToTop from './components/Header/ScrollToTop';
 import Privacy from './components/Legal/Privacy.jsx'
@@ -23,7 +24,8 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home />} />
       <Route path='/events' element={<Events />} />
       <Route path='/speakers' element={<Speakers />} />
-      <Route path='/sponsers' element={<Sponsers />} />
+      {/* <Route path='/sponsers' element={<Sponsers />} /> */}
+      <Route path='/sponsers' element={<Sponsors />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/privacy' element={<Privacy />} />
       <Route path='/tnc' element={<TnC />} />

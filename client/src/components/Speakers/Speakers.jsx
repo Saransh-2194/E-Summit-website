@@ -1,90 +1,64 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+
+function SpeakerCard({ speaker }) {
+  const cardTextStyle = {
+    fontFamily: "'Comic Neue', cursive",
+  };
+
+  return (
+    <div className="relative group bg-white p-2 rounded-lg w-full max-w-xs shadow-lg hover:shadow-2xl transition-shadow duration-300 border-black border-4 m-4 overflow-hidden" style={{ boxShadow: '-20px 20px 0px 0px black' }}>
+      <img
+        src={speaker.image}
+        alt={speaker.name}
+        className="w-full h-60 object-cover rounded-t-lg transition duration-300"
+      />
+      <h3 className="text-xl font-semibold mt-4 text-gray-800" style={cardTextStyle}>
+        {speaker.name}
+      </h3>
+      <p className="text-gray-600" style={cardTextStyle}>{speaker.date}</p>
+      <div className="absolute bottom-0 left-0 w-full bg-white p-4 transition-all duration-300 transform translate-y-full group-hover:translate-y-0">
+        <div className="flex justify-center gap-4">
+          <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8" />
+          </a>
+          <a href={speaker.Instagram} target="_blank" rel="noopener noreferrer">
+            <img src="/instagram.png" alt="Instagram" className="w-7 h-7 sm:w-9 sm:h-9" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Speakers() {
-  const [expandedCard, setExpandedCard] = useState(null);
   const speakers = [
-    { name: "Speaker 1", image: "speaker-dummy.jpg", description: "Expert in AI & ML", date: "March 10, 2025", linkedin: "https://linkedin.com/speaker1", twitter: "https://twitter.com/speaker1" },
-    { name: "Speaker 2", image: "speaker-dummy.jpg", description: "Cybersecurity Specialist", date: "March 12, 2025", linkedin: "https://linkedin.com/speaker2", twitter: "https://twitter.com/speaker2" },
-    { name: "Speaker 3", image: "speaker-dummy.jpg", description: "Blockchain Innovator", date: "March 15, 2025", linkedin: "https://linkedin.com/speaker3", twitter: "https://twitter.com/speaker3" },
-    { name: "Speaker 4", image: "speaker-dummy.jpg", description: "Cloud Computing Guru", date: "March 18, 2025", linkedin: "https://linkedin.com/speaker4", twitter: "https://twitter.com/speaker4" },
-    { name: "Speaker 5", image: "speaker-dummy.jpg", description: "Data Science Enthusiast", date: "March 20, 2025", linkedin: "https://linkedin.com/speaker5", twitter: "https://twitter.com/speaker5" },
-    { name: "Speaker 6", image: "speaker-dummy.jpg", description: "IoT Visionary", date: "March 22, 2025", linkedin: "https://linkedin.com/speaker6", twitter: "https://twitter.com/speaker6" },
+    { name: "Speaker 1", image: "speaker-dummy.jpg", date: "March 10, 2025", linkedin: "https://linkedin.com/speaker1", twitter: "https://twitter.com/speaker1" },
+    { name: "Speaker 2", image: "speaker-dummy.jpg", date: "March 12, 2025", linkedin: "https://linkedin.com/speaker2", twitter: "https://twitter.com/speaker2" },
+    { name: "Speaker 3", image: "speaker-dummy.jpg", date: "March 15, 2025", linkedin: "https://linkedin.com/speaker3", twitter: "https://twitter.com/speaker3" },
+    { name: "Speaker 4", image: "speaker-dummy.jpg", date: "March 18, 2025", linkedin: "https://linkedin.com/speaker4", twitter: "https://twitter.com/speaker4" },
+    { name: "Speaker 5", image: "speaker-dummy.jpg", date: "March 20, 2025", linkedin: "https://linkedin.com/speaker5", twitter: "https://twitter.com/speaker5" },
+    { name: "Speaker 6", image: "speaker-dummy.jpg", date: "March 22, 2025", linkedin: "https://linkedin.com/speaker6", twitter: "https://twitter.com/speaker6" },
   ];
 
   const pageStyle = {
-    fontFamily: "'Luckiest Guy', cursive",
-    backgroundImage: "url('/home-bg.png')",
+    fontFamily: "'Comic Neue', cursive",
+    backgroundImage: "url('/')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     minHeight: "100vh",
   };
 
-  const handleExpand = (index) => {
-    setExpandedCard(expandedCard === index ? null : index);
-  };
-
   return (
-    <AnimatePresence>
-      <motion.div
-        className="relative min-h-screen w-full flex flex-col items-center mb-20 px-6 py-10"
-        style={pageStyle}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.div
-          className="flex justify-center mb-12 mt-20"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: false }}
-        >
-          <motion.img
-            src="/speakers.png"
-            alt="SPEAKERS"
-            className="h-12 md:h-16 lg:h-22"
-          />
-        </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 w-full max-w-6xl mt-15 ">
-          {speakers.map((speaker, index) => (
-            <motion.div
-              key={index}
-              className={`bg-white border-4 border-black rounded-xl shadow-[-15px_15px_0px_black] overflow-hidden w-full p-8 relative transition-all duration-900 cursor-pointer transform ${
-                expandedCard !== null && expandedCard !== index ? "scale-90 opacity-50" : "scale-100 opacity-100"
-              }`}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: false }}
-              onClick={() => handleExpand(index)}
-            >
-              <div className="relative group">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="w-full h-48 md:h-56 object-cover rounded-lg transition duration-300 group-hover:blur-lg group-hover:scale-105"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-lg font-bold text-center p-4 rounded-md">{speaker.description}</p>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-center mt-4">{speaker.name}</h3>
-              <p className="text-center text-gray-500 text-lg">{speaker.date}</p>
-              <div className="flex justify-center gap-4 mt-2 ">
-                <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img src="/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
-                </a>
-                <a href={speaker.twitter} target="_blank" rel="noopener noreferrer">
-                  <img src="/twitter.png" alt="Twitter" className="w-9 h-9" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </AnimatePresence>
+    <div className="relative min-h-screen w-full flex flex-col items-center mb-20 px-4 py-10" style={pageStyle}>
+      <div className="flex justify-center mb-12 mt-20">
+        <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-35 " />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">
+        {speakers.map((speaker, index) => (
+          <SpeakerCard key={index} speaker={speaker} />
+        ))}
+      </div>
+    </div>
   );
 }

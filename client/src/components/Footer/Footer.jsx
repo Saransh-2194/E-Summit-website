@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    const handleTouchStart = (event) => {
+      const target = event.target.closest('.group');
+      if (target) {
+        target.classList.add('hover');
+      }
+    };
+
+    const handleTouchEnd = (event) => {
+      const target = event.target.closest('.group');
+      if (target) {
+        target.classList.remove('hover');
+      }
+    };
+
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
 
   return (
     <footer className="bg-black border-y">
@@ -19,8 +43,8 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Resources</h2>
-              <ul className="text-gray-500 font-medium">
+              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">Resources</h2>
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/" className="text-white hover:underline">
                     Home
@@ -34,8 +58,8 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">E-Summit 2025</h2>
-              <ul className="text-gray-500 font-medium">
+              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">E-Summit 2025</h2>
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
                     href="/contact"
@@ -53,8 +77,8 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
-              <ul className="text-white font-medium">
+              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">Legal</h2>
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/privacy" className="text-white hover:underline">
                     Privacy Policy
@@ -76,7 +100,7 @@ export default function Footer() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center">
+          <span className="text-sm text-gray-400 sm:text-center">
             © {currentYear}&nbsp;
             <a href="/" className="text-white hover:underline">
               TIEDC-JUIT

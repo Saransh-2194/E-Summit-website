@@ -5,6 +5,7 @@ import "./Header.css"; // Import the CSS file for styling
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   let lastScrollY = window.scrollY;
@@ -20,6 +21,12 @@ const Header = () => {
       setIsVisible(true);
     }
     lastScrollY = window.scrollY;
+
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
   };
 
   useEffect(() => {
@@ -43,7 +50,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const headerTextStyle = {
-    fontFamily: "'Luckiest Guy', cursive",
+    fontFamily: "'Comic Neue', cursive",
     color: "white",
   };
 
@@ -66,23 +73,23 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? 'bg-gradient-to-b from-black via-black/70 to-black/30 backdrop-blur-2xl' : 'bg-black'} shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center">
-          <img src="events.png" alt="SIAM Logo" className="h-8 w-auto" />
+          <img src="events.png" alt="E-Summit" className="h-8 w-auto" />
         </Link>
 
         {/* Expanded Navigation Links */}
         <div className="hidden lg:flex flex-grow justify-center space-x-16 items-center py-2">
-          <ul className="flex space-x-16 font-serif text-base w-full justify-center header-text" style={headerTextStyle}>
+          <ul className="flex space-x-16 text-base w-full justify-center header-text" style={headerTextStyle}>
             <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
                     isActive
-                      ? "text-white font-medium hover:text-green-300 transform scale-105"
+                      ? "text-white font-medium hover:text-yellow-400 transform scale-105"
                       : "hover:text-green-200"
                   }`
                 }
@@ -135,7 +142,7 @@ const Header = () => {
         <div className="lg:hidden flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-gray-300 hover:text-green-300 transition-all duration-300"
+            className="text-gray-300 hover:text-yellow-300 transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -163,39 +170,44 @@ const Header = () => {
 
       {/* Mobile Menu with Slide-Down Animation */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        } bg-black bg-opacity-500 shadow-md absolute top-full left-0 right-0 py-4`}
+        className={`lg:hidden transition-all duration-500 ease-in-out ${
+          isMenuOpen ? "max-h-96 opacity-100 bg-black" : "max-h-0 opacity-0"
+        } shadow-md absolute top-full left-0 right-0 py-4`}
       >
-        <ul className="flex flex-col items-center space-y-5 font-serif text-base text-gray-300 header-text" style={headerTextStyle}>
+        <ul className="flex flex-col items-center space-y-5 text-base text-white header-text" style={headerTextStyle}>
           <li>
             <NavLink
               to="/"
-              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              onClick={toggleMenu}
+              style={headerTextStyle}
             >
               Home
             </NavLink>
           </li>
           <li>
             <button
-              onClick={() => handleNavigation("events-content")}
-              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+              onClick={() => { handleNavigation("events-content"); toggleMenu(); }}
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              style={headerTextStyle}
             >
               Events
             </button>
           </li>
           <li>
             <button
-              onClick={() => handleNavigation("speakers-content")}
-              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+              onClick={() => { handleNavigation("speakers-content"); toggleMenu(); }}
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              style={headerTextStyle}
             >
               Speakers
             </button>
           </li>
           <li>
             <button
-              onClick={() => handleNavigation("sponsers-content")}
-              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+              onClick={() => { handleNavigation("sponsers-content"); toggleMenu(); }}
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              style={headerTextStyle}
             >
               Sponsors
             </button>
@@ -203,7 +215,9 @@ const Header = () => {
           <li>
             <NavLink
               to="/contact"
-              className="nav-links px-6 py-3 rounded-lg hover:text-green-300 transition-all duration-300"
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              onClick={toggleMenu}
+              style={headerTextStyle}
             >
               Contact Us
             </NavLink>
@@ -215,4 +229,3 @@ const Header = () => {
 };
 
 export default Header;
-
