@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
+  const TextStyle = {
+    fontFamily: "'Comic Neue', cursive",
+  };
   useEffect(() => {
     const handleTouchStart = (event) => {
       const target = event.target.closest('.group');
@@ -58,7 +60,7 @@ export default function Footer() {
               </ul>
             </div> */}
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">E-Summit 2025</h2>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase" style={TextStyle}>E-Summit 2025</h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <a
@@ -77,7 +79,7 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase" style={TextStyle}>Legal</h2>
               <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/privacy" className="text-white hover:underline">
