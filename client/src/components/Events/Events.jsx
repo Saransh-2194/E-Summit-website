@@ -94,8 +94,8 @@ function EventCard({ event, navigate, cardTextStyle }) {
       >
         {/* Front Side */}
         <div className="absolute w-full h-full flex flex-col items-center justify-center p-4 backface-hidden">
-          <img src={event.image} alt={event.name} className="w-full h-36 sm:h-48 object-cover rounded-lg mb-3" />
-          <h3 className="text-md sm:text-xl font-bold" style={cardTextStyle}>{event.name}</h3>
+          <img src={event.image} alt={event.name} className="w-full h-50 sm:h-58 object-full rounded-lg mb-3" />
+          <h3 className="text-md sm:text-2xl font-bold" style={cardTextStyle}>{event.name}</h3>
         </div>
 
         {/* Back Side */}

@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 
 function SpeakerCard({ speaker }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const cardTextStyle = {
     fontFamily: "'Comic Neue', cursive",
   };
@@ -16,6 +26,16 @@ function SpeakerCard({ speaker }) {
         {speaker.name}
       </h3>
       <p className="text-gray-600" style={cardTextStyle}>{speaker.date}</p>
+      {isMobile && (
+        <div className="flex justify-center gap-4 mt-2">
+          <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8" />
+          </a>
+          <a href={speaker.Instagram} target="_blank" rel="noopener noreferrer">
+            <img src="/instagram.png" alt="Instagram" className="w-7 h-7 sm:w-9 sm:h-9" />
+          </a>
+        </div>
+      )}
       <div className="absolute bottom-0 left-0 w-full bg-white p-4 transition-all duration-300 transform translate-y-full group-hover:translate-y-0">
         <div className="flex justify-center gap-4">
           <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">

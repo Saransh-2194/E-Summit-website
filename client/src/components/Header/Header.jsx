@@ -73,7 +73,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? 'bg-gradient-to-b from-black via-black/70 to-black/30 backdrop-blur-2xl' : 'bg-black'} shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 scrollbar-hide ${isScrolled ? 'bg-gradient-to-b from-black via-black/70 to-black/30 backdrop-blur-2xl' : 'bg-black'} shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center">

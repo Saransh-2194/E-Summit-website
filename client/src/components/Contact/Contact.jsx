@@ -105,12 +105,12 @@ const groupedTeamMembers = teamMembers.reduce((acc, member) => {
 const cardTextStyle = {
   fontFamily: "'Comic Neue'",
 };
+
 function TeamMemberCard({ member, index }) {
   const [showOverlay, setShowOverlay] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const cardRef = useRef(null);
 
-  // Update mobile state on window resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -149,7 +149,6 @@ function TeamMemberCard({ member, index }) {
       }
     };
   }, [isMobile]);
-
 
   return (
     <div
@@ -203,16 +202,16 @@ function TeamMemberCard({ member, index }) {
 
 export default function Contact() {
   const pageStyle = {
-    backgroundImage: "url('/')",
-    backgroundSize: "contain",
-    backgroundPosition: "top",
-    backgroundRepeat: "no-repeat",
+    backgroundImage: "url('/bg-1.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
     minHeight: "100vh",
     fontFamily: "'Comic Neue', cursive",
   };
 
   return (
-    <div className="w-full py-8 pt-30 bg-pink-400 overflow-x-hidden" style={pageStyle}>
+    <div className="w-full py-8 pt-30 bg-pink-400 overflow-x-hidden custom-scrollbar" style={pageStyle}>
       <div className="flex justify-center mb-12">
         <motion.img
           src="/team.png"

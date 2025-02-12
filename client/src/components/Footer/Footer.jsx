@@ -29,21 +29,21 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black border-y">
+    <footer className="bg-gradient-to-t from-black to-pink-400 border-y">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link to="/" className="flex items-center">
               <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="mr-3 h-16"
+                src="esummitlogo.png"
+                className=" h-20 mt-10 ml"
                 alt="Logo"
               />
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">Resources</h2>
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
+            {/* <div>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Resources</h2>
               <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/" className="text-white hover:underline">
@@ -56,10 +56,10 @@ export default function Footer() {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">E-Summit 2025</h2>
-              <ul className="text-gray-400 font-medium">
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase">E-Summit 2025</h2>
+              <ul className="text-white font-medium">
                 <li className="mb-4">
                   <a
                     href="/contact"
@@ -77,14 +77,14 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase">Legal</h2>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
               <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/privacy" className="text-white hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
-                <li className="mb-4"> {/* Added padding here */}
+                <li className="mb-4">
                   <Link to="/tnc" className="text-white hover:underline">
                     Terms &amp; Conditions
                   </Link>
