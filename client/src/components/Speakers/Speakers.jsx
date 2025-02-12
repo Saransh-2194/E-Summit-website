@@ -37,6 +37,7 @@ function SpeakerCard({ speaker }) {
         </div>
       </div>
     </div>
+    
   );
 }
 
