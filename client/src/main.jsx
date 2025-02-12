@@ -11,6 +11,7 @@ import Speakers from './components/Speakers/Speakers.jsx'
 import Sponsers from './components/Sponsers/Sponsers.jsx'
 import Sponsors from './components/Sponsors/Sponsors.jsx'
 import Register from './components/Register/Register.jsx'
+import ScrollToTop from './components/Header/ScrollToTop';
 import Privacy from './components/Legal/Privacy.jsx'
 import TnC from './components/Legal/TnC.jsx'
 import Refund from './components/Legal/Refund.jsx'
