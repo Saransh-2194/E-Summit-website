@@ -14,7 +14,6 @@ import Register from './components/Register/Register.jsx'
 import Privacy from './components/Legal/Privacy.jsx'
 import TnC from './components/Legal/TnC.jsx'
 import Refund from './components/Legal/Refund.jsx'
-// import Register from './components/Register/Register.jsx'
 
 
 const router = createBrowserRouter(
@@ -23,7 +22,6 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home />} />
       <Route path='/events' element={<Events />} />
       <Route path='/speakers' element={<Speakers />} />
-      {/* <Route path='/sponsers' element={<Sponsers />} /> */}
       <Route path='/sponsers' element={<Sponsors />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/privacy' element={<Privacy />} />
