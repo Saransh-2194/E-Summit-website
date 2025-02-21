@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative bg-pink-400 min-h-screen w-full flex flex-col items-center overflow-x-hidden" style={pageStyle}>
+    <div className="relative min-h-screen w-full flex flex-col items-center overflow-x-hidden" style={pageStyle}>
       <div
         className={`relative flex justify-center items-center h-full lg:mt-14.5 mt-8 bg-yellow-300 ${
           isMobile ? "h-screen w-full" : ""
@@ -114,7 +114,7 @@ export default function Home() {
               <motion.img
                 src="/h2.png"
                 alt="INNOVATION TO EXCEL"
-                className="h-12 md:h-9 lg:h-16 mx-auto my-[-4%]"
+                className="h-12 md:h-9 lg:h-14 mx-auto my-[-4%]"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -123,7 +123,7 @@ export default function Home() {
               <motion.img
                 src="/h3.png"
                 alt="20-22 MARCH 2025"
-                className="h-10 md:h-9 lg:h-14 mx-auto my-2"
+                className="mt-4 h-10 md:h-9 lg:h-14 mx-auto my-2"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -156,16 +156,16 @@ export default function Home() {
       </div>
 
       {/* Other sections */}
-      <div id="about-us-content" className="mt-10 px-4 md:px-8 lg:px-16">
+      <div id="about-us-content" className="mt-10 px-4 md:px-8 lg:px-16 mb-10">
         <AboutUs />
       </div>
-      <div id="events-content" className="mt-10 px-4 md:px-8 lg:px-16">
+      <div id="events-content" className="mt-10 px-4 md:px-8 lg:px-16 mb-10">
         <Events />
       </div>
-      <div id="speakers-content" className="px-4 md:px-8 lg:px-16">
+      <div id="speakers-content" className="mt-10 px-4 md:px-8 lg:px-16">
         <PastSpeakers /> {/* Replaced Speakers with PastSpeakers */}
       </div>
-      <div id="faqs-content" className="px-4 md:px-8 lg:px-16">
+      <div id="faqs-content" className="px-4 md:px-8 lg:px-16 mb-10 py-[-10]">
         <Faqs />
       </div>
     </div>

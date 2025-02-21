@@ -52,13 +52,14 @@ function Faqs() {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center px-6 py-20 mt-10"
+      className="relative min-h-screen flex items-center justify-center px-6 lg:py-20 lg:mt-20"
       style={{
-        backgroundImage: "url('/faqs-bg.png')",
+        backgroundImage: "url('/bg-1.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        fontFamily: "'Comic Neue', cursive",
       }}
     >
       <div className="relative bg-white border-8 border-black rounded-3xl shadow-2xl p-10 max-w-4xl w-full">

@@ -12,11 +12,11 @@ const speakers = [
 
 export default function PastSpeakers() {
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-10">
-      <div className="flex justify-center mt-10">
-        <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-35 " />
+    <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-2">
+      <div className="flex justify-center items-center">
+        <img src="/past.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25 " />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 mt-10">
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index} speaker={speaker} />
         ))}

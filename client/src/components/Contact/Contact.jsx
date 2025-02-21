@@ -103,7 +103,7 @@ const groupedTeamMembers = teamMembers.reduce((acc, member) => {
 }, {});
 
 const cardTextStyle = {
-  fontFamily: "'Comic Neue'",
+  fontFamily: "'Comic Neue', cursive",
 };
 function TeamMemberCard({ member, index }) {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -225,7 +225,7 @@ export default function Contact() {
       </div>
       {Object.keys(groupedTeamMembers).map((query, index) => (
         <div key={index} className="mb-16" style={cardTextStyle}>
-          <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center" style={{ textShadow: "4px 4px 0px black" }}>
+          <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center" style={{ textShadow: "4px 4px 0px black", fontFamily: "'Comic Neue', cursive", }}>
             {query} {query !== "Overall Coordinator" ? "related Queries" : ""}
           </h1>
           <div className="flex flex-wrap justify-center gap-12">
@@ -236,8 +236,8 @@ export default function Contact() {
         </div>
       ))}
       {/* How to Reach JUIT Section */}
-      <div className="mt-20 px-10 md:px-20 lg:px-32 text-center">
-        <h2 className="text-4xl font-bold text-yellow-400 mb-10" style={{ textShadow: "4px 4px 0px black" }}>
+      <div className="mt-20 px-10 md:px-20 lg:px-32 text-center mb-10">
+        <h2 className="text-6xl font-bold text-yellow-400 mb-14" style={{ textShadow: "4px 4px 0px black", fontFamily: "'Comic Neue', cursive", }}>
           How to Reach JUIT
         </h2>
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -248,26 +248,26 @@ export default function Contact() {
               className="absolute inset-0"
               style={{
                 backgroundImage: "url('/torn-page.png')",
-                backgroundSize: "127% 125%", // Increase the size of the background image
+                backgroundSize: "125% 125%", // Increase the size of the background image
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
             ></div>
-            <div className="relative z-10 p-10 max-w-full">
-              <p className="text-lg text-gray-800 leading-relaxed mb-6">
+            <div className="relative z-10 p-10 max-w-full" style = {cardTextStyle}>
+              <p className="text-lg text-gray-800 leading-relaxed mb-6 ml-6 mt-4">
                 Jaypee University of Information Technology (JUIT) is located in Waknaghat, Solan, Himachal Pradesh. Here are the ways to reach JUIT:
               </p>
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-black mb-2">By Air:</h3>
-                <p className="text-lg text-gray-800 leading-relaxed mb-4">
+                <h3 className="text-2xl font-bold text-black mb-2 ml-6" style = {cardTextStyle}>By Air:</h3>
+                <p className="text-lg text-gray-800 leading-relaxed mb-4 ml-6">
                   The nearest airport is Shimla Airport, which is approximately 30 km from the campus. You can take a taxi from the airport to reach JUIT.
                 </p>
-                <h3 className="text-2xl font-bold text-black mb-2">By Train:</h3>
-                <p className="text-lg text-gray-800 leading-relaxed mb-4">
+                <h3 className="text-2xl font-bold text-black mb-2 ml-6 " style = {cardTextStyle}>By Train:</h3>
+                <p className="text-lg text-gray-800 leading-relaxed mb-4 ml-6 ">
                   The nearest railway station is Kalka Railway Station, which is around 40 km from the campus. From Kalka, you can take a taxi or a bus to reach JUIT.
                 </p>
-                <h3 className="text-2xl font-bold text-black mb-2">By Road:</h3>
-                <p className="text-lg text-gray-800 leading-relaxed mb-4">
+                <h3 className="text-2xl font-bold text-black mb-2 ml-6 " style = {cardTextStyle}>By Road:</h3>
+                <p className="text-lg text-gray-800 leading-relaxed mb-4 ml-6 mb-10">
                   JUIT is well connected by road. You can take a bus or drive to the campus. The university is located on the Shimla-Kalka Highway (NH-22).
                 </p>
               </div>

@@ -23,9 +23,7 @@ export default function Events() {
         <img src="/events.png" alt="EVENTS" className="h-12 md:h-16 lg:h-22" />
       </div>
       <div className="max-w-7xl mx-8 px-10 md:px-8 lg:px-0">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-25 gap-x-14 auto-rows-min mt-10 sm:mt-12 place-items-center">
-
-
+        <div className="flex flex-wrap justify-center gap-16 mt-10">
           {events.map((event, index) => (
             <div key={index}>
               <EventCard event={event} navigate={navigate} cardTextStyle={cardTextStyle} />
@@ -77,7 +75,7 @@ function EventCard({ event, navigate, cardTextStyle }) {
     </div>
   ) : (
     <div
-      className="relative w-72 lg:h-106 sm:w-92 sm:h-104 cursor-pointer"
+      className="relative w-72 lg:h-106 sm:w-92 sm:h-104 cursor-pointer mb-10"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={handleCardClick}

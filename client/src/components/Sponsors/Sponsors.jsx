@@ -36,10 +36,10 @@ function Sponsors() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center p-8 min-h-screen text-black overflow-hidden" style = {pageStyle}>
+    <div className="w-full flex flex-col items-center p-8 min-h-screen text-black overflow-hidden">
       {/* Title Image */}
-      <div className="flex justify-center mb-12 mt-10">
-        <img src="/sponsors.png" alt="Our Sponsors" className="h-20 md:h-16 lg:h-35" />
+      <div className="flex justify-center mb-12 mt-20">
+        <img src="/sponsor.png" alt="Our Sponsors" className="h-20 md:h-16 lg:h-25" />
       </div>
       
       {/* Sponsor Categories */}

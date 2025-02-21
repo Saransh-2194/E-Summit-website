@@ -207,22 +207,24 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button
-              onClick={() => { handleNavigation("speakers-content"); toggleMenu(); }}
+          <NavLink
+              to="/speakers"
               className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              onClick={toggleMenu}
               style={headerTextStyle}
             >
               Speakers
-            </button>
+            </NavLink>
           </li>
           <li>
-            <button
-              onClick={() => { handleNavigation("sponsers-content"); toggleMenu(); }}
+          <NavLink
+              to="/sponsors"
               className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              onClick={toggleMenu}
               style={headerTextStyle}
             >
               Sponsors
-            </button>
+            </NavLink>
           </li>
           <li>
             <NavLink
