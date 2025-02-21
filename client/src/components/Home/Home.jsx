@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import Events from "../Events/Events";
-import Speakers from "../Speakers/Speakers";
-import Sponsors from "../Sponsors/Sponsors";
+import PastSpeakers from "../Speakers/PastSpeakers"; // Import the PastSpeakers component
+import AboutUs from "./About.jsx";
+import Faqs from "../Faqs/Faqs"; // Import the Faqs component
 import { motion } from "framer-motion";
+import './Home.css';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -74,13 +77,13 @@ export default function Home() {
 
         {/* Overlay content (logos and text) */}
         {!isMobile && (
-          <div className="absolute top-1/3.5 left-1/2 transform -translate-x-1/2 translate -translate-y-1/13 flex flex-col items-center text-center">
+          <div className="absolute top-1/3.5 left-1/2 transform -translate-x-1/2 translate -translate-y-1/10 flex flex-col items-center text-center">
             {/* Logos container */}
-            <div className="logos-container flex justify-center items-center gap-6 flex-wrap mb-4 mr-12">
+            <div className="logos-container flex justify-center items-center gap-6 flex-wrap mb-4 mr-12 md:mt-10 lg:mt-0">
               <motion.img
                 src="/logo.png"
                 alt="Esummit Logo"
-                className="h-16 md:h-20"
+                className="h-16 md:h-10 lg:h-20"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -89,7 +92,7 @@ export default function Home() {
               <motion.img
                 src="/tiedc logo.png"
                 alt="TIEDC Logo"
-                className="h-16 md:h-20"
+                className="h-16 md:h-12 lg:h-20"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -102,7 +105,7 @@ export default function Home() {
               <motion.img
                 src="/Esummit.png"
                 alt="E-SUMMIT’25"
-                className="h-24 md:h-38 mx-auto ml-6"
+                className="h-24 md:h-22 lg:h-40 mx-auto ml-6"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInFromLeft}
@@ -111,7 +114,7 @@ export default function Home() {
               <motion.img
                 src="/h2.png"
                 alt="INNOVATION TO EXCEL"
-                className="h-12 md:h-14 mx-auto my-[-4%]"
+                className="h-12 md:h-9 lg:h-16 mx-auto my-[-4%]"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -120,39 +123,50 @@ export default function Home() {
               <motion.img
                 src="/h3.png"
                 alt="20-22 MARCH 2025"
-                className="h-10 md:h-12 mx-auto my-4"
+                className="h-10 md:h-9 lg:h-14 mx-auto my-2"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
                 custom={4}
               />
+              <motion.button
+                className="px-10 py-1 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                custom={5}
+              >
+                <Link to="/register">Register Now</Link>
+              </motion.button>
             </div>
           </div>
         )}
       </div>
 
       {/* Infinite moving text */}
-      <div className="relative w-full overflow-hidden bg-white py-1">
-        <div className="marquee">
-          <div className="marquee-content">
-            <span className="text-2xl font-bold mx-4">
-              INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25
-              • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL •
-              E-SUMMIT’25 •
-            </span>
+      <div className="marquee">
+        <div className="marquee-content">
+          <div className="text-2xl font-bold">
+            INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 •
+          </div>
+          <div className="text-2xl font-bold">
+            INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 • INNOVATE TO EXCEL • E-SUMMIT’25 •
           </div>
         </div>
       </div>
 
       {/* Other sections */}
-      <div id="events-content" className="mt-20 px-4 md:px-8 lg:px-16">
+      <div id="about-us-content" className="mt-10 px-4 md:px-8 lg:px-16">
+        <AboutUs />
+      </div>
+      <div id="events-content" className="mt-10 px-4 md:px-8 lg:px-16">
         <Events />
       </div>
       <div id="speakers-content" className="px-4 md:px-8 lg:px-16">
-        <Speakers />
+        <PastSpeakers /> {/* Replaced Speakers with PastSpeakers */}
       </div>
-      <div id="sponsers-content" className="px-4 md:px-8 lg:px-16">
-        <Sponsors />
+      <div id="faqs-content" className="px-4 md:px-8 lg:px-16">
+        <Faqs />
       </div>
     </div>
   );

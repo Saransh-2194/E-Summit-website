@@ -106,20 +106,32 @@ const Header = () => {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("speakers-content")}
-                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
+            <NavLink
+                to="/speakers"
+                className={({ isActive }) =>
+                  `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    isActive
+                      ? "text-white font-medium hover:text-green-300 transform scale-105"
+                      : "hover:text-green-200"
+                  }`
+                }
               >
                 Speakers
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("sponsers-content")}
-                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
+            <NavLink
+                to="/sponsors"
+                className={({ isActive }) =>
+                  `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    isActive
+                      ? "text-white font-medium hover:text-green-300 transform scale-105"
+                      : "hover:text-green-200"
+                  }`
+                }
               >
                 Sponsors
-              </button>
+              </NavLink>
             </li>
             <li>
               <NavLink

@@ -20,7 +20,7 @@ function SpeakerCard({ speaker }) {
       <img
         src={speaker.image}
         alt={speaker.name}
-        className="w-full h-60 object-cover rounded-t-lg transition duration-300"
+        className="w-full h-70 object-cover rounded-t-lg transition duration-300"
       />
       <h3 className="text-xl font-semibold mt-4 text-gray-800" style={cardTextStyle}>
         {speaker.name}
@@ -52,17 +52,17 @@ export default function Speakers() {
   ];
 
   const pageStyle = {
-    fontFamily: "'Comic Neue', cursive",
-    backgroundImage: "url('/')",
+    backgroundImage: "url('/bg-1.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
+    fontFamily: "'Comic Neue', cursive",
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center mb-20 px-4 py-10" style={pageStyle}>
-      <div className="flex justify-center mb-12 mt-20">
+    <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-10" style={pageStyle}>
+      <div className="flex justify-center mt-10">
         <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-35 " />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">

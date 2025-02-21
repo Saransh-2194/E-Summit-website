@@ -4,11 +4,30 @@ html, body {
     padding: 0;
 }
 
-.full-page-background {
-    background-image: url('/Bg.png'); /* Adjust the path as necessary */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+.marquee {
+    display: flex;
+    overflow: hidden;
     width: 100%;
+    height: 5vh;
+    align-items: center;
+    background-color: white;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    min-width: 200%;
+    will-change: transform;
+}
+
+/* Keyframes for infinite scrolling without gaps */
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }

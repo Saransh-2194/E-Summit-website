@@ -1,0 +1,59 @@
+import React, { useState, useEffect, useRef } from "react";
+
+const speakers = [
+  { name: "John Doe", position: "CEO, Example Corp", image: "/speaker-dummy.jpg" },
+  { name: "Jane Smith", position: "CTO, Tech Innovations", image: "/speaker-dummy.jpg" },
+  { name: "Michael Brown", position: "Founder, Startup Hub", image: "/speaker-dummy.jpg" },
+  { name: "Alice Johnson", position: "COO, Creative Solutions", image: "/speaker-dummy.jpg" },
+  { name: "Robert Wilson", position: "CFO, Financial Experts", image: "/speaker-dummy.jpg" },
+  { name: "Emily Davis", position: "CMO, Marketing Masters", image: "/speaker-dummy.jpg" },
+  // Add more speakers as needed
+];
+
+export default function PastSpeakers() {
+  return (
+    <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-10">
+      <div className="flex justify-center mt-10">
+        <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-35 " />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">
+        {speakers.map((speaker, index) => (
+          <SpeakerCard key={index} speaker={speaker} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SpeakerCard({ speaker }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const cardTextStyle = {
+    fontFamily: "'Comic Neue', cursive",
+  };
+
+  return (
+    <div className="relative group bg-white p-2 rounded-lg w-full max-w-xs shadow-lg hover:shadow-2xl transition-shadow duration-300 border-black border-4 m-4 overflow-hidden" style={{ boxShadow: '-20px 20px 0px 0px black' }}>
+      <img
+        src={speaker.image}
+        alt={speaker.name}
+        className="w-full h-70 object-cover rounded-t-lg transition duration-300"
+      />
+      <h3 className="text-xl font-semibold mt-4 text-gray-800" style={cardTextStyle}>
+        {speaker.name}
+      </h3>
+      <p className="text-gray-600" style={cardTextStyle}>{speaker.position}</p>
+    </div>
+    
+  );
+}
+
+

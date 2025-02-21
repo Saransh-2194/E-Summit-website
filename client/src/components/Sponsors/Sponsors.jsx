@@ -26,8 +26,17 @@ function Sponsors() {
     fontFamily: "'Comic Neue', cursive",
   };
 
+  const pageStyle = {
+    backgroundImage: "url('/bg-1.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
+    fontFamily: "'Comic Neue', cursive",
+  };
+
   return (
-    <div id="sponsors-section" className="w-full flex flex-col items-center p-8 min-h-screen text-black overflow-hidden">
+    <div className="w-full flex flex-col items-center p-8 min-h-screen text-black overflow-hidden" style = {pageStyle}>
       {/* Title Image */}
       <div className="flex justify-center mb-12 mt-10">
         <img src="/sponsors.png" alt="Our Sponsors" className="h-20 md:h-16 lg:h-35" />

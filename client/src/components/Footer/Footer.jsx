@@ -5,6 +5,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const TextStyle = {
     fontFamily: "'Comic Neue', cursive",
+    color: "white"
+  };
+  const LinkStyle = {
+    fontFamily: "'Comic Neue', cursive",
+    color: "rgba(255, 255, 255, 0.7)"
   };
   useEffect(() => {
     const handleTouchStart = (event) => {
@@ -44,55 +49,56 @@ export default function Footer() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
-            {/* <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase">Resources</h2>
-              <ul className="text-gray-400 font-medium">
-                <li className="mb-4">
-                  <Link to="/" className="text-white hover:underline">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="text-white hover:underline">
-                    About
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
             <div>
               <h2 className="mb-6 text-sm font-semibold text-white uppercase" style={TextStyle}>E-Summit 2025</h2>
-              <ul className="text-white font-medium">
+              <ul className="text-white font-medium" style={TextStyle}>
                 <li className="mb-4">
                   <a
                     href="/contact"
                     className="text-white hover:underline"
                     rel="noreferrer"
-                  >
+                    style={LinkStyle}
+                    >
                     Our Team
                   </a>
                 </li>
-                <li>
-                  <Link to="/register" className="text-white hover:underline">
+                <li className="mb-4">
+                  <Link to="/register" className="text-white hover:underline"
+                    style={LinkStyle}
+                    >
                     Register Now!
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faqs" className="text-white hover:underline"
+                    style={LinkStyle}
+                    >
+                    FAQs
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold text-white uppercase" style={TextStyle}>Legal</h2>
-              <ul className="text-gray-400 font-medium">
+              <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <Link to="/privacy" className="text-white hover:underline">
+                  <Link to="/privacy" className="text-white hover:underline"
+                  style={LinkStyle}
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link to="/tnc" className="text-white hover:underline">
+                  <Link to="/tnc" className="text-white hover:underline"
+                    style={LinkStyle}
+                    >
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link to="refund" className="text-white hover:underline">
+                  <Link to="refund" className="text-white hover:underline"
+                    style={LinkStyle}
+                  >
                     Refund &amp; Cancellation Policy
                   </Link>
                 </li>
@@ -104,13 +110,13 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-400 sm:text-center">
             © {currentYear}&nbsp;
-            <a href="/" className="text-white hover:underline">
+            <a href="/" className="text-white hover:underline" style={LinkStyle}>
               TIEDC-JUIT
             </a>
             . All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
-            <Link to="https://www.facebook.com/tiedcjuit" className="group text-white" target="_blank">
+            <Link to="https://www.facebook.com/tiedcjuit" className="group text-white" target="_blank" style={LinkStyle}>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-130 group-hover:text-blue-600"
                 aria-hidden="true"
@@ -126,7 +132,7 @@ export default function Footer() {
               </svg>
               <span className="sr-only">Facebook page</span>
             </Link>
-            <Link to="https://www.instagram.com/tiedcjuit/" className="group text-white" target="_blank">
+            <Link to="https://www.instagram.com/tiedcjuit/" className="group text-white" target="_blank" style={LinkStyle}>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-130 group-hover:text-pink-400"
                 aria-hidden="true"
@@ -138,7 +144,7 @@ export default function Footer() {
               </svg>
               <span className="sr-only">Instagram</span>
             </Link>
-            <Link to="#" className="group text-white" target="_blank">
+            {/* <Link to="#" className="group text-white" target="_blank" style={LinkStyle}>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-130 group-hover:text-blue-400"
                 aria-hidden="true"
@@ -153,8 +159,8 @@ export default function Footer() {
                 />
               </svg>
               <span className="sr-only">Twitter page</span>
-            </Link>
-            <Link to="https://www.linkedin.com/company/tiedcjuit/" className="group text-white" target="_blank">
+            </Link> */}
+            <Link to="https://www.linkedin.com/company/tiedcjuit/" className="group text-white" target="_blank" style={LinkStyle}>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-130 group-hover:text-blue-500"
                 aria-hidden="true"
@@ -170,7 +176,7 @@ export default function Footer() {
               </svg>
               <span className="sr-only">Linkedin</span>
             </Link>
-            <Link to="https://www.youtube.com/@tiedcjuit3132" className="group text-white" target="_blank">
+            <Link to="https://www.youtube.com/@tiedcjuit3132" className="group text-white" target="_blank" style={LinkStyle}>
               <svg
                 className="w-5 h-5 transition-transform duration-300 group-hover:scale-130 group-hover:text-red-500"
                 aria-hidden="true"

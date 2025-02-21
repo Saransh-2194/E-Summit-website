@@ -15,14 +15,6 @@
     animation: appear 5s linear;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(168, 168, 168);
-}
-
-a:hover {
-    color: rgb(102, 159, 245);
-}
 
 body {
     font-family: 'Comic Neue', cursive;
