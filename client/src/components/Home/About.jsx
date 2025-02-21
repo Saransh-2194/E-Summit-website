@@ -9,14 +9,16 @@ export default function AboutUs() {
     <div className="text-white min-h-screen px-6 sm:px-12 md:px-20 lg:px-32 py-4">
       {/* Header */}
       <div className="flex justify-center mb-20">
-        <img src="/about.png" alt="About Us" className="h-15 md:h-28 lg:h-25" />
+          <img src="/about.png" alt="About Us" className="h-15 md:h-28 lg:h-25" />
       </div>
 
       {/* First Section: TIEDC */}
       <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
         {/* Image */}
         <div className="w-full h-full lg:w-2/3">
+        <a href="https://www.juit.ac.in/tiedc-cell" target="_blank" rel="noopener noreferrer">
           <img src="/Tiedc-juit.jpg" alt="JUIT" className="rounded-xl shadow-lg w-full h-70" />
+          </a>
         </div>
 
         {/* Text Content */}
