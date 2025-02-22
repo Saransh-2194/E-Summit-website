@@ -17,13 +17,13 @@ export default function Sponsers() {
     y: 0,
   };
 
-  const pageStyle = {
-    backgroundImage: "url('/events-bg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
-  };
+  // const pageStyle = {
+  //   backgroundImage: "url('/events-bg.png')",
+  //   backgroundSize: "cover",
+  //   backgroundPosition: "center",
+  //   backgroundRepeat: "no-repeat",
+  //   minHeight: "100vh",
+  // };
 
   return (
     <AnimatePresence>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const speakers = [
-  { name: "John Doe", position: "CEO, Example Corp", image: "/speaker-dummy.jpg" },
-  { name: "Jane Smith", position: "CTO, Tech Innovations", image: "/speaker-dummy.jpg" },
-  { name: "Michael Brown", position: "Founder, Startup Hub", image: "/speaker-dummy.jpg" },
-  { name: "Alice Johnson", position: "COO, Creative Solutions", image: "/speaker-dummy.jpg" },
-  { name: "Robert Wilson", position: "CFO, Financial Experts", image: "/speaker-dummy.jpg" },
-  { name: "Emily Davis", position: "CMO, Marketing Masters", image: "/speaker-dummy.jpg" },
+  { name: "BhuvanBam", position: "Content Creator / Actor", image: "./speakers/bhuvanbam.jpeg" },
+  { name: "Samay Raina", position: "Comicstaan 2 winner", image: "./speakers/samay.jpeg" },
+  { name: "Sunchit Dudeja", position: "SDE-V at Adobe", image: "./speakers/sunchit.png" },
+  { name: "Hina Arora", position: "Engineering Manager, Jio Platforms Limited", image: "./speakers/hina.jpg" },
+  { name: "Ashutosh Kumar", position: "CEO- Jagriti Yatra", image: "./speakers/AshutoshKumar.jpg" },
+  { name: "Anmol Jamwal", position: "Angel Investor", image: "./speakers/anmoljamwal.jpeg" },
   // Add more speakers as needed
 ];
 

@@ -47,7 +47,7 @@ export default function AboutUs() {
 
       {/* Second Section: E-Summit */}
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-        {/* Text Content */}
+        {/* Text Content */} 
         <div className="relative w-full lg:w-3/3 text-center lg:text-left">
           {/* Background Image */}
           <div
@@ -76,7 +76,7 @@ export default function AboutUs() {
 
         {/* Image */}
         <div className="w-full lg:w-2/3">
-          <img src="/Dummy.jpeg" alt="TIEDC" className="rounded-xl shadow-lg w-full" />
+          <img src="/esummit19pic.JPG" alt="TIEDC" className="rounded-xl shadow-lg w-full" />
         </div>
       </div>
     </div>
