@@ -8,7 +8,10 @@ export const InfiniteMovingCards = ({
   direction = "left",
   speed = "slow",
   pauseOnHover = true,
-  className
+  className,
+  itemClassName,
+  imageClassName,
+  triggerOnScroll = false,
 }) => {
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
@@ -16,7 +19,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
-  
+
   const [start, setStart] = useState(false);
 
   function addAnimation() {
@@ -76,14 +79,10 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-            style={{
-              background: "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
-            }}
+            className={`relative flex-shrink-0 ${itemClassName} mr-4`}
             key={item.name}
           >
-            <img src={item.image} alt={item.name} className="w-full h-32 object-cover rounded-lg" />
-            <h3 className="text-lg font-semibold text-center mt-2 text-gray-100">{item.name}</h3>
+            <img src={item.image} alt={item.name} className={`object-cover ${imageClassName}`} />
           </li>
         ))}
       </ul>

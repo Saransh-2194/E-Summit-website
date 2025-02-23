@@ -128,7 +128,7 @@ export const AnimatedTestimonials = ({
                       opacity: 1,
                       y: 0,
                     }}
-                                        transition={{
+                    transition={{
                       duration: 0.2,
                       ease: "easeInOut",
                       delay: 0.02 * index,

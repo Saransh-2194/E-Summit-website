@@ -77,7 +77,7 @@ const Header = () => {
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center">
-          <img src="events.png" alt="E-Summit" className="h-8 w-auto" />
+          <img src="headerLogo.png" alt="E-Summit" className="h-10 w-auto" />
         </Link>
 
         {/* Expanded Navigation Links */}

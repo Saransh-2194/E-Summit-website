@@ -52,7 +52,7 @@ function Faqs() {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center px-6 lg:py-20 lg:mt-20"
+      className="relative min-h-screen flex items-center justify-center px-6"
       style={{
         backgroundImage: "url('/bg-1.png')",
         backgroundSize: "cover",
@@ -62,26 +62,33 @@ function Faqs() {
         fontFamily: "'Comic Neue', cursive",
       }}
     >
-      <div className="relative bg-white border-8 border-black rounded-3xl shadow-2xl p-10 max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-yellow-400 uppercase mb-15 text-center" style={{ textShadow: "4px 4px 0px black" }}>
+      <div className="relative bg-white border-8 border-black rounded-3xl shadow-2xl p-10 max-w-5xl w-full mb-15">
+        <h1 className="text-4xl font-bold text-yellow-400 uppercase mb-15 text-center" style={{ textShadow: "4px 4px 0px black", fontFamily: "'Comic Neue', cursive" }}>
           Frequently Asked Questions
         </h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b-2 border-gray-300 pb-4 relative">
-              <button
-                className="w-full text-left text-xl font-bold text-black uppercase mb-2 flex justify-between items-center focus:outline-none"
+              <div
+                role="button"
+                tabIndex={0}
+                className="w-full text-left text-xl font-bold text-black uppercase mb-2 flex justify-between items-center focus:outline-none cursor-pointer"
                 onClick={() => toggleFaq(index)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleFaq(index);
+                  }
+                }}
               >
                 {faq.question}
                 <span className="ml-2">
                   <img
                     src="./arrow-circle-direction-down.webp"
                     alt="Toggle"
-                    className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                    className={`w-8 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
                   />
                 </span>
-              </button>
+              </div>
               <div className={`overflow-hidden transition-all duration-500 ${openIndex === index ? 'max-h-screen' : 'max-h-0'}`}>
                 <p className="text-lg text-gray-800 leading-relaxed">
                   {faq.answer}
@@ -90,8 +97,8 @@ function Faqs() {
             </div>
           ))}
         </div>
-      <div className="absolute -top-5 -left-5 w-12 h-12 bg-pink-500 border-4 border-black rounded-full"></div>
-      <div className="absolute -bottom-5 -right-5 w-12 h-12 bg-blue-500 border-4 border-black rounded-full"></div>
+        <div className="absolute -top-5 -left-5 w-12 h-12 bg-pink-500 border-4 border-black rounded-full"></div>
+        <div className="absolute -bottom-5 -right-5 w-12 h-12 bg-blue-500 border-4 border-black rounded-full"></div>
       </div>
     </div>
   );

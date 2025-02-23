@@ -4,6 +4,7 @@ import Events from "../Events/Events";
 import PastSpeakers from "../Speakers/PastSpeakers"; // Import the PastSpeakers component
 import AboutUs from "./About.jsx";
 import Faqs from "../Faqs/Faqs"; // Import the Faqs component
+import Sponsers from "../Sponsers/Sponsers"; // Import the Sponsors component
 import { motion } from "framer-motion";
 import './Home.css';
 
@@ -83,7 +84,7 @@ export default function Home() {
               <motion.img
                 src="/logo.png"
                 alt="Esummit Logo"
-                className="h-16 md:h-10 lg:h-20"
+                className="h-16 md:h-8 lg:h-22"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -92,7 +93,7 @@ export default function Home() {
               <motion.img
                 src="/tiedc logo.png"
                 alt="TIEDC Logo"
-                className="h-16 md:h-12 lg:h-20"
+                className="h-16 md:h-12 lg:h-22"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -105,7 +106,7 @@ export default function Home() {
               <motion.img
                 src="/Esummit.png"
                 alt="E-SUMMIT’25"
-                className="h-24 md:h-22 lg:h-40 mx-auto ml-6"
+                className="h-24 md:h-22 lg:h-44 mx-auto ml-3"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInFromLeft}
@@ -114,7 +115,7 @@ export default function Home() {
               <motion.img
                 src="/h2.png"
                 alt="INNOVATION TO EXCEL"
-                className="h-12 md:h-9 lg:h-14 mx-auto my-[-4%]"
+                className="h-12 md:h-9 lg:h-15 mx-auto my-[-4%]"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -123,14 +124,14 @@ export default function Home() {
               <motion.img
                 src="/h3.png"
                 alt="20-22 MARCH 2025"
-                className="mt-4 h-10 md:h-9 lg:h-14 mx-auto my-2"
+                className="mt-4 h-10 md:h-9 lg:h-15 mx-auto my-2"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
                 custom={4}
               />
               <motion.button
-                className="px-10 py-1 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
+                className="px-10 py-1.5 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -139,6 +140,20 @@ export default function Home() {
                 <Link to="/register">Register Now</Link>
               </motion.button>
             </div>
+          </div>
+        )}
+        {/* Mobile Video Background */}
+        {isMobile && (
+          <div className="absolute bottom-77 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-center">
+            <button
+              className="px-5 py-0.5 bg-blue-400 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+              custom={5}
+            >
+              <Link to="/register">Register Now</Link>
+            </button>
           </div>
         )}
       </div>
@@ -165,7 +180,10 @@ export default function Home() {
       <div id="speakers-content" className="mt-10 px-4 md:px-8 lg:px-16">
         <PastSpeakers /> {/* Replaced Speakers with PastSpeakers */}
       </div>
-      <div id="faqs-content" className="px-4 md:px-8 lg:px-16 mb-10 py-[-10]">
+      <div id="sponsers-content" className="mt-10 px-4 md:px-8 lg:px-16">
+        <Sponsers />
+      </div>
+      <div id="faqs-content" className="px-4 md:px-8 lg:px-16 mb-10">
         <Faqs />
       </div>
     </div>

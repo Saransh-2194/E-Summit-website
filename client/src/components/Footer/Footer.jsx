@@ -69,13 +69,6 @@ export default function Footer() {
                     Register Now!
                   </Link>
                 </li>
-                <li>
-                  <Link to="/faqs" className="text-white hover:underline"
-                    style={LinkStyle}
-                    >
-                    FAQs
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>
