@@ -24,7 +24,7 @@ export default function Sponsers() {
   return (
     <AnimatePresence>
       <motion.div
-        className="relative min-h-screen w-full flex flex-col items-center"
+        className="relative mb-55 w-full flex flex-col items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -45,7 +45,7 @@ export default function Sponsers() {
         </motion.div>
         <div className="flex flex-col items-center w-full px-4 md:px-8 lg:px-16">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mt-10 mb-10"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mt-10 "
             initial={{ opacity: 0, y: 30 }}
             animate={titleControls}
             transition={{ duration: 0.75}}
