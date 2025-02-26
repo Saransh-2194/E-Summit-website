@@ -80,24 +80,51 @@ export default function Home() {
         {!isMobile && (
           <div className="absolute top-1/3.5 left-1/2 transform -translate-x-1/2 translate -translate-y-1/10 flex flex-col items-center text-center">
             {/* Logos container */}
-            <div className="logos-container flex justify-center items-center gap-6 flex-wrap mb-4 mr-12 md:mt-10 lg:mt-0">
+            <div className="logos-container flex justify-center items-center gap-4 flex-wrap mr-10 md:mt-10 lg:mt-13">
               <motion.img
-                src="/logo.png"
-                alt="Esummit Logo"
-                className="h-16 md:h-8 lg:h-22"
+                src="/juitlogo.png"
+                alt="JUIT"
+                className="h-16 md:h-12 lg:h-14"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
                 custom={0}
               />
               <motion.img
-                src="/tiedc logo.png"
-                alt="TIEDC Logo"
-                className="h-16 md:h-12 lg:h-22"
+                src="/iiclogo.png"
+                alt="IIC"
+                className="h-16 md:h-12 lg:h-10"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
                 custom={1}
+              />
+              <motion.img
+                src="/Edusphere.png"
+                alt="Jaypee Edusphere"
+                className="h-12 md:h-12 lg:h-10"
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                custom={2}
+              />
+              <motion.img
+                src="/logo.png"
+                alt="Esummit Logo"
+                className="h-16 md:h-8 lg:h-12"
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                custom={3}
+              />
+              <motion.img
+                src="/tiedc logo.png"
+                alt="TIEDC Logo"
+                className="h-16 md:h-12 lg:h-12"
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                custom={4}
               />
             </div>
 
@@ -110,7 +137,7 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInFromLeft}
-                custom={2}
+                custom={5}
               />
               <motion.img
                 src="/h2.png"
@@ -119,7 +146,7 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                custom={3}
+                custom={6}
               />
               <motion.img
                 src="/h3.png"
@@ -128,14 +155,14 @@ export default function Home() {
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                custom={4}
+                custom={7}
               />
               <motion.button
                 className="px-10 py-1.5 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                custom={5}
+                custom={8}
               >
                 <Link to="/register">Register Now</Link>
               </motion.button>
@@ -144,7 +171,7 @@ export default function Home() {
         )}
         {/* Mobile Video Background */}
         {isMobile && (
-          <div className="absolute bottom-77 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-center">
+          <div className="absolute bottom-55 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-center">
             <button
               className="px-5 py-0.5 bg-blue-400 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
               initial="hidden"

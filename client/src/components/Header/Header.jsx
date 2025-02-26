@@ -106,7 +106,23 @@ const Header = () => {
               </button>
             </li>
             <li>
-            <NavLink
+              <button
+                onClick={() => handleNavigation("speakers-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
+              >
+                Speakers
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavigation("sponsers-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
+              >
+                Sponsors
+              </button>
+            </li>
+            {/* <li> */}
+            {/* <NavLink
                 to="/speakers"
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
@@ -118,8 +134,8 @@ const Header = () => {
               >
                 Speakers
               </NavLink>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
             <NavLink
                 to="/sponsors"
                 className={({ isActive }) =>
@@ -132,7 +148,7 @@ const Header = () => {
               >
                 Sponsors
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/contact"

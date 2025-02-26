@@ -1,24 +1,22 @@
-import React, { useState } from "react";
-// import bgImage from '/Bg.png';
+import React from "react";
 
 export default function Register() {
-  const events = [
-    { name: 'Event 1', image: 'event1.jpg' },
-    { name: 'Event 2', image: 'event2.jpg' },
-    { name: 'Event 3', image: 'event3.jpg' },
-  ];  
-
   return (
-    <div className="relative min-h-screen w-full">
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-        {events.map((event, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src={event.image} alt={event.name} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">{event.name}</h3>
-            </div>
-          </div>
-        ))}
+    <div
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20"
+      style={{
+        backgroundImage: "url('/bg-1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        fontFamily: "'Comic Neue', cursive",
+      }}
+    >
+      <div className="relative bg-white border-8 border-black rounded-3xl shadow-2xl p-10 max-w-4xl w-full text-center">
+        <h1 className="text-4xl font-bold text-yellow-400 uppercase mb-10" style={{ textShadow: "2px 2px 0px black", fontFamily: "'Comic Neue', cursive" }}>
+          Coming Soon
+        </h1>
       </div>
     </div>
   );

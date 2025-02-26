@@ -52,8 +52,8 @@ const teamMembers = [
     role: "Design & Tech team member",
     description: "Crafting the digital experience.",
     query: "Website and Technical",
-    image: "./Council/",
-    email: "",
+    image: "./Council/Saransh Agarwal.jpg",
+    email: "work.saranshagarwal@gmail.com",
     linkedin: "https://www.linkedin.com/in/saransh-ag21/"
   },
   {

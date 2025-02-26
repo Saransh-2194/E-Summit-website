@@ -3,18 +3,66 @@ import { useNavigate } from "react-router-dom";
 
 export default function Events() {
   const events = [
-    { name: "Fundfrontier", image: "./Events/Fundfrontier.jpg", link: "/register", details: "Don't miss out!" },
-    { name: "Ipl auction", image: "./Events/Ipl auction.jpg", link: "/register", details: "An event like no other." },
-    { name: "Stock titan", image: "./Events/Stock titain.jpg", link: "/register", details: "Sign up today!" },
-    { name: "Design Sphere", image: "./Events/Design Sphere.jpg", link: "/register", details: "Join this amazing event!" },
-    { name: "Summit Scape", image: "./Events/SummitScape.jpg", link: "/register", details: "Experience the fun!" },
-    { name: "Valorant Vortex", image: "./Events/Valorant.jpg", link: "/register", details: "Be part of something big!" },
+    { 
+      name: "Fundfrontier", 
+      image: "./Events/Fundfrontier.jpg", 
+      shortDetails: "An investment challenge where startups pitch their ideas to a panel of investors." 
+    },
+    { 
+      name: "Ipl auction", 
+      image: "./Events/Ipl auction.jpg", 
+      shortDetails: "Teams compete in a cricket and IPL quiz, then bid on players to build the best squad." 
+    },
+    { 
+      name: "Stock titan", 
+      image: "./Events/Stock titain.jpg", 
+      shortDetails: "A real-time stock market simulation where participants compete to build the most profitable portfolio." 
+    },
+    { 
+      name: "Design Sphere", 
+      image: "./Events/Design Sphere.jpg", 
+      shortDetails: "An online design event celebrating creativity, innovation, and artistic expression." 
+    },
+    { 
+      name: "Summit Scape", 
+      image: "./Events/SummitScape.jpg", 
+      shortDetails: "A digital engagement initiative where attendees capture and share dynamic moments from E-Summit 2025." 
+    },
+    { 
+      name: "Valorant Vortex", 
+      image: "./Events/Valorant.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Biz Quiz", 
+      image: "./Events/BizQuiz.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Software Hackathon", 
+      image: "./Events/SwHackathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Hardware Hackathon", 
+      image: "./Events/HwHackathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Codathon", 
+      image: "./Events/Codathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
   ];
 
   const navigate = useNavigate();
 
   const cardTextStyle = {
     fontFamily: "'Comic Neue', cursive",
+  };
+
+  const handleImageClick = () => {
+    navigate("/register");
   };
 
   return (
@@ -26,7 +74,7 @@ export default function Events() {
         <div className="flex flex-wrap justify-center gap-16 mt-10">
           {events.map((event, index) => (
             <div key={index}>
-              <EventCard event={event} navigate={navigate} cardTextStyle={cardTextStyle} />
+              <EventCard event={event} cardTextStyle={cardTextStyle} onImageClick={handleImageClick} />
             </div>
           ))}
         </div>
@@ -36,7 +84,7 @@ export default function Events() {
 }
 
 // Event Card Component
-function EventCard({ event, navigate, cardTextStyle }) {
+function EventCard({ event, cardTextStyle, onImageClick }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -51,15 +99,13 @@ function EventCard({ event, navigate, cardTextStyle }) {
   const handleCardClick = (e) => {
     e.stopPropagation();
     if (isMobile) {
-      navigate(event.link);
-    } else {
       setIsFlipped((prev) => !prev);
     }
   };
 
   return isMobile ? (
     <div
-      className="relative w-72 h-84 sm:w-92 sm:h-108 cursor-pointer bg-white border-4 border-black rounded-xl shadow-lg flex flex-col items-center p-4 justify-center"
+      className="relative w-72 h-auto sm:w-92 sm:h-auto cursor-pointer bg-white border-4 border-black rounded-xl shadow-lg flex flex-col items-center p-4 justify-center"
       onClick={handleCardClick}
       style={{ boxShadow: '-20px 20px 0px 0px black' }}
     >
@@ -67,11 +113,12 @@ function EventCard({ event, navigate, cardTextStyle }) {
       <div className="absolute w-full h-full bg-black rounded-xl -z-10 translate-x-2 translate-y-2"></div>
 
       {/* Image */}
-      <img src={event.image} alt={event.name} className="w-full h-48 sm:h-56 object-cover rounded-lg mb-3" />
+      <img src={event.image} alt={event.name} className="w-full h-48 sm:h-56 object-cover rounded-lg mb-3" onClick={onImageClick} />
       
       {/* Event Details */}
       <h3 className="text-md sm:text-xl font-bold" style={cardTextStyle}>{event.name}</h3>
-      <p className="text-sm sm:text-sm mt-1 text-gray-700 text-center" style={cardTextStyle}>{event.details}</p>
+      <p className="text-sm sm:text-sm mt-1 text-gray-700 text-center" style={cardTextStyle}>{event.shortDetails}</p>
+      <a href="/description" className="text-blue-500 hover:underline mt-2">Read more...</a>
     </div>
   ) : (
     <div
@@ -100,8 +147,9 @@ function EventCard({ event, navigate, cardTextStyle }) {
 
         {/* Back Side */}
         <div className="absolute w-full h-full bg-yellow-300 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
-          <p className="text-xl sm:text-xl" style={cardTextStyle}>{event.details}</p>
-          <a href={event.link} className="mt-2 sm:mt-4 px-2 sm:px-4 py-1 sm:py-2 bg-white text-black rounded-lg">Register</a>
+          <p className="text-sm sm:text-lg" style={cardTextStyle}>{event.shortDetails}</p>
+          <a href="/description" className="text-blue-500 hover:underline mt-2">Read more...</a>
+          <a href="/register" className="mt-2 sm:mt-4 px-2 sm:px-4 py-1 sm:py-2 bg-white text-black rounded-lg">Register</a>
         </div>
       </div>
     </div>

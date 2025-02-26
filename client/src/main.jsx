@@ -8,6 +8,7 @@ import Home from './components/Home/Home.jsx'
 import AboutUs from './components/Home/About.jsx' // Corrected path
 import Contact from './components/Contact/Contact.jsx'
 import Events from './components/Events/Events.jsx'
+import Description from './components/Events/Description.jsx'
 import Speakers from './components/Speakers/Speakers.jsx'
 import Sponsors from './components/Sponsors/Sponsors.jsx'
 import Register from './components/Register/Register.jsx'
@@ -22,10 +23,12 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<AboutUs />} /> {/* Corrected path */}
       <Route path='/events' element={<Events />} />
+      <Route path='/description' element={<Description/>} />
       <Route path='/speakers' element={<Speakers />} />
       <Route path='/sponsors' element={<Sponsors />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/privacy' element={<Privacy />} />
+      <Route path='/register' element={<Register/>} />
       <Route path='/tnc' element={<TnC />} />
       <Route path='/refund' element={<Refund />} />
       <Route path='/faqs' element={<Faqs />} />
