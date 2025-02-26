@@ -4,6 +4,21 @@ import { useNavigate } from "react-router-dom";
 export default function Events() {
   const events = [
     { 
+      name: "Software Hackathon", 
+      image: "./Events/SwHackathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Hardware Hackathon", 
+      image: "./Events/HwHackathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
+      name: "Codathon", 
+      image: "./Events/Codathon.jpg", 
+      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
+    },
+    { 
       name: "Fundfrontier", 
       image: "./Events/Fundfrontier.jpg", 
       shortDetails: "An investment challenge where startups pitch their ideas to a panel of investors." 
@@ -36,21 +51,6 @@ export default function Events() {
     { 
       name: "Biz Quiz", 
       image: "./Events/BizQuiz.jpg", 
-      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
-    },
-    { 
-      name: "Software Hackathon", 
-      image: "./Events/SwHackathon.jpg", 
-      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
-    },
-    { 
-      name: "Hardware Hackathon", 
-      image: "./Events/HwHackathon.jpg", 
-      shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
-    },
-    { 
-      name: "Codathon", 
-      image: "./Events/Codathon.jpg", 
       shortDetails: "A gaming tournament where players compete in fast-paced FPS battles." 
     },
   ];

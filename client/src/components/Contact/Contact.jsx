@@ -9,7 +9,7 @@ const teamMembers = [
     description: "Leading with vision and purpose.",
     query: "Overall Coordinator",
     image: "./Council/Akshit Sharma.png",
-    email: "",
+    email: "211435@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/actuallyakshit/"
   },
   {
@@ -18,7 +18,7 @@ const teamMembers = [
     description: "Empowering the team with excellence.",
     query: "Overall Coordinator",
     image: "./Council/Geetansh Singh.jpg",
-    email: "",
+    email: "211418@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/geetansh-singh-/"
   },
   {
@@ -27,7 +27,7 @@ const teamMembers = [
     description: "Building bridges with the world.",
     query: "Events and PR",
     image: "./Council/Sanya Jain.jpg",
-    email: "",
+    email: "221030048@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/jainsanya/"
   },
   {
@@ -36,21 +36,22 @@ const teamMembers = [
     description: "Building bridges with industry.",
     query: "Speakers",
     image: "./Council/Priyanshi Jain.jpeg",
-    email: "",
+    email: "221030024@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/jain-priyanshii/"
   },
   {
     name: "Akash Gupta",
     role: "Finance & Sponsorships Head",
+    description: "Managing finances and securing sponsorships.",
     query: "Sponsorships",
     image: "./Council/Akash Gupta.JPG",
-    email: "",
+    email: "221030174@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/akash-gupta-ai-ml/"
   },
   {
     name: "Saransh Agarwal",
     role: "Design & Tech team member",
-    description: "Crafting the digital experience.",
+    description: "Innovating and enhancing the digital experience.",
     query: "Website and Technical",
     image: "./Council/Saransh Agarwal.jpg",
     email: "work.saranshagarwal@gmail.com",
@@ -62,7 +63,7 @@ const teamMembers = [
     description: "Crafting the digital experience.",
     query: "Design and Technical",
     image: "./Council/Mithas.jpg",
-    email: "",
+    email: "221030210@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/mithasaggarwal-/"
   },
   {
@@ -71,7 +72,7 @@ const teamMembers = [
     description: "Sharing experiences with the world.",
     query: "Social Media",
     image: "./Council/kanishka.jpg",
-    email: "",
+    email: "221030153@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/kanishka-sharma-b6994a256/"
   },
   {
@@ -80,7 +81,7 @@ const teamMembers = [
     description: "Guiding the team with experience.",
     query: "Website and Technical",
     image: "./Council/Akshit sharma.jpg",
-    email: "",
+    email: "akshitsharmaa7322@gmail.com",
     linkedin: "https://www.linkedin.com/in/akshit-sharmaa/"
   },
   {
@@ -91,6 +92,24 @@ const teamMembers = [
     image: "./Council/Ashmi Sharma.jpg",
     email: "sharmaashmi142004@gmail.com",
     linkedin: "https://www.linkedin.com/in/ashmi-sharma42/"
+  },
+  {
+    name: "Naman Mittal",
+    role: "IIC Student Coordinator",
+    description: "Driving innovation through hackathons.",
+    query: "Hackathon",
+    image: "./Council/NamanMittal.jpg",
+    email: "namanmittal501@gmail.com",
+    linkedin: "https://www.linkedin.com/in/naman--mittal/"
+  },
+  {
+    name: "Parth Gupta",
+    role: "IIC Student Coordinator",
+    description: "Fostering creativity and collaboration.",
+    query: "Hackathon",
+    image: "./Council/Parth.jpg",
+    email: "gupta.pag@gmail.com",
+    linkedin: "https://www.linkedin.com/in/-parth-gupta-/"
   }
 ];
 
