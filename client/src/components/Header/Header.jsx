@@ -77,7 +77,7 @@ const Header = () => {
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center">
-          <img src="headerLogo.png" alt="E-Summit" className="h-10 w-auto" />
+          <img src="headerLogo.png" alt="E-Summit" className="h-10 w-auto mt-1" />
         </Link>
 
         {/* Expanded Navigation Links */}
@@ -223,6 +223,24 @@ const Header = () => {
             </button>
           </li>
           <li>
+            <button
+              onClick={() => { handleNavigation("speakers-content"); toggleMenu(); }}
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              style={headerTextStyle}
+            >
+              Speakers
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => { handleNavigation("sponsers-content"); toggleMenu(); }}
+              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+              style={headerTextStyle}
+            >
+              Sponsors
+            </button>
+          </li>
+          {/* <li>
           <NavLink
               to="/speakers"
               className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
@@ -241,7 +259,7 @@ const Header = () => {
             >
               Sponsors
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/contact"

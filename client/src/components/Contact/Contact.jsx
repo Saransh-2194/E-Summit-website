@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     name: "Sanya Jain",
-    role: "Public Relations Head",
+    role: "Public Relations & Marketing Head",
     description: "Building bridges with the world.",
     query: "Events and PR",
     image: "./Council/Sanya Jain.jpg",
@@ -58,10 +58,10 @@ const teamMembers = [
   },
   {
     name: "Mithas Aggarwal",
-    role: "Design Head",
+    role: "Design & Technical Head",
     description: "Crafting the digital experience.",
     query: "Design and Technical",
-    image: "./Council/mithas.jpeg",
+    image: "./Council/Mithas.jpg",
     email: "",
     linkedin: "https://www.linkedin.com/in/mithasaggarwal-/"
   },

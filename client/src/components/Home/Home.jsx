@@ -80,11 +80,11 @@ export default function Home() {
         {!isMobile && (
           <div className="absolute top-1/3.5 left-1/2 transform -translate-x-1/2 translate -translate-y-1/10 flex flex-col items-center text-center">
             {/* Logos container */}
-            <div className="logos-container flex justify-center items-center gap-4 flex-wrap mr-10 md:mt-10 lg:mt-13">
+            <div className="logos-container flex justify-center items-center gap-4 flex-wrap mr-10 md:mt-13 md:mr-6 lg:mt-28 xl:mt-16">
               <motion.img
                 src="/juitlogo.png"
                 alt="JUIT"
-                className="h-16 md:h-12 lg:h-14"
+                className="h-16 md:h-8 lg:h-14"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -93,7 +93,7 @@ export default function Home() {
               <motion.img
                 src="/iiclogo.png"
                 alt="IIC"
-                className="h-16 md:h-12 lg:h-10"
+                className="h-16 md:h-6 lg:h-10"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -102,7 +102,7 @@ export default function Home() {
               <motion.img
                 src="/Edusphere.png"
                 alt="Jaypee Edusphere"
-                className="h-12 md:h-12 lg:h-10"
+                className="h-12 md:h-6 lg:h-10"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -120,7 +120,7 @@ export default function Home() {
               <motion.img
                 src="/tiedc logo.png"
                 alt="TIEDC Logo"
-                className="h-16 md:h-12 lg:h-12"
+                className="h-16 md:h-8 lg:h-12"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -133,7 +133,7 @@ export default function Home() {
               <motion.img
                 src="/Esummit.png"
                 alt="E-SUMMIT’25"
-                className="h-24 md:h-22 lg:h-44 mx-auto ml-3"
+                className="h-24 md:h-26 lg:h-34 xl:h-44 mx-auto ml-3"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInFromLeft}
@@ -142,7 +142,7 @@ export default function Home() {
               <motion.img
                 src="/h2.png"
                 alt="INNOVATION TO EXCEL"
-                className="h-12 md:h-9 lg:h-15 mx-auto my-[-4%]"
+                className="h-12 md:h-9 lg:h-12 xl:h-15 mx-auto my-[-4%]"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
@@ -151,7 +151,7 @@ export default function Home() {
               <motion.img
                 src="/h3.png"
                 alt="20-22 MARCH 2025"
-                className="mt-4 h-10 md:h-9 lg:h-15 mx-auto my-2"
+                className="mt-4 h-10 md:h-10 lg:h-12  xl:h-15 mx-auto my-2"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
