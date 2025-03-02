@@ -164,7 +164,9 @@ export default function Home() {
                 variants={textVariants}
                 custom={8}
               >
-                <Link to="/register">Register Now</Link>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScq9gHSP_wiEcVzVx6hBbQbFXR0KCafC-KTelA7FCzXj_bviQ/viewform" target="_blank" rel="noopener noreferrer">
+    Register Now
+  </a>
               </motion.button>
             </div>
           </div>
@@ -179,7 +181,9 @@ export default function Home() {
               variants={textVariants}
               custom={5}
             >
-              <Link to="/register">Register Now</Link>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScq9gHSP_wiEcVzVx6hBbQbFXR0KCafC-KTelA7FCzXj_bviQ/viewform" target="_blank" rel="noopener noreferrer">
+    Register Now
+  </a>
             </button>
           </div>
         )}
