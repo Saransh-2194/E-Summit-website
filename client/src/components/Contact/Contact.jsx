@@ -4,9 +4,27 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: "Akshit Sharma",
+    name: "Dr.Ashish Kumar",
     role: "Coordinator",
     description: "Leading with vision and purpose.",
+    query: "Faculty Coordinator",
+    image: "./Council/ashish_sir.png",
+    email: "ashish.fce@juitsolan.in",
+    linkedin: "https://www.linkedin.com/company/tiedcjuit/"
+  },
+  {
+    name: "Dr. Shruti Jain",
+    role: "Coordinator",
+    description: "Leading with vision and purpose.",
+    query: "Faculty Coordinator",
+    image: "./Council/shruti_mam_j.jpg",
+    email: "shruti.jain@juitsolan.in",
+    linkedin: "https://www.linkedin.com/in/dr-shruti-jain-92705b130/"
+  },
+  {
+    name: "Akshit Sharma",
+    role: "Coordinator",
+    description: "Empowering the team with excellence.",
     query: "Overall Coordinator",
     image: "./Council/Akshit Sharma.png",
     email: "211435@juitsolan.in",
@@ -245,7 +263,7 @@ export default function Contact() {
       {Object.keys(groupedTeamMembers).map((query, index) => (
         <div key={index} className="mb-16" style={cardTextStyle}>
           <h1 className="text-4xl font-bold text-yellow-400 mb-10 text-center" style={{ textShadow: "4px 4px 0px black", fontFamily: "'Comic Neue', cursive", }}>
-            {query} {query !== "Overall Coordinator" ? "related Queries" : ""}
+            {query} {query !== "Overall Coordinator" && query !== "Faculty Coordinator" ? "related Queries" : ""}
           </h1>
           <div className="flex flex-wrap justify-center gap-12">
             {groupedTeamMembers[query].map((member, idx) => (

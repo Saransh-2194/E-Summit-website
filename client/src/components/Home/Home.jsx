@@ -158,7 +158,7 @@ export default function Home() {
                 custom={7}
               />
               <motion.button
-                className="px-10 py-1.5 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
+                className="px-12 py-2 bg-yellow-300 text-black font-bold rounded-lg shadow-lg hover:bg-blue-400 hover:text-white transition duration-300"
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
