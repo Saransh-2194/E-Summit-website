@@ -183,7 +183,7 @@ export default function Home() {
               variants={textVariants}
               custom={5}
             >
-              <a href="/Register" rel="noopener noreferrer">
+              <a href="/register" rel="noopener noreferrer">
                 Register Now
               </a>
             </button>
