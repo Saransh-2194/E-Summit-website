@@ -34,7 +34,7 @@ export default function Register() {
         { text: "Access to Guest Lectures", filled: true },
         { text: "Event certificates", filled: true },
         { text: "Goodies", filled: true },
-        { text: "Food & Lodging", filled: true, description: ["3 meals per day", "Accommodation in campus hostels", "24/7 access to campus facilities"] },
+        { text: "Food & Lodging", filled: true, description: ["2 meals per day", "Accommodation in campus hostels", "24/7 access to campus facilities"] },
       ],
       link: "https://forms.gle/ZRU2D8RQKpRFCWkw6"
     },
