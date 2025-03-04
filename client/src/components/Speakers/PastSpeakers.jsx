@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const speakers = [
-  { name: "BhuvanBam", position: "Content Creator | Actor", image: "./speakers/bhuvanbam.jpeg" },
-  { name: "Samay Raina", position: "Comicstaan 2 winner | Stand Up Comic", image: "./speakers/samay.jpeg" },
-  { name: "Sunchit Dudeja", position: "SDE-V at Adobe", image: "./speakers/sunchit.png" },
-  { name: "Hina Arora", position: "Engineering Manager, Jio Platforms Limited", image: "./speakers/hina.jpg" },
-  { name: "Saurabh Dayal", position: "Co-founder @ ClearDekho", image: "./speakers/saurabh.jpg" },
-  { name: "Anmol Jamwal", position: "CEO @ Feoster | Angel Investor", image: "./speakers/anmoljamwal.jpeg" },
+  { name: "BhuvanBam", position: "Content Creator | Actor", image: "./past speakers/bhuvanbam.jpeg" },
+  { name: "Samay Raina", position: "Comicstaan 2 winner | Stand Up Comic", image: "./past speakers/samay.jpeg" },
+  { name: "Sunchit Dudeja", position: "SDE-V at Adobe", image: "./past speakers/sunchit.png" },
+  { name: "Hina Arora", position: "Engineering Manager, Jio Platforms Limited", image: "./past speakers/hina.jpg" },
+  { name: "Saurabh Dayal", position: "Co-founder @ ClearDekho", image: "./past speakers/saurabh.jpg" },
+  { name: "Anmol Jamwal", position: "CEO @ Feoster | Angel Investor", image: "./past speakers/anmoljamwal.jpeg" },
   // Add more speakers as needed
 ];
 
@@ -14,7 +14,7 @@ export default function PastSpeakers() {
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-2">
       <div className="flex justify-center items-center">
-        <img src="/past.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25" />
+        <img src="/past.png" alt="SPEAKERS" className="h-16 md:h-16 lg:h-22" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 mt-10">
         {speakers.map((speaker, index) => (

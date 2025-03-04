@@ -73,7 +73,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 scrollbar-hide ${isScrolled ? 'bg-gradient-to-b from-black via-black/70 to-black/30 backdrop-blur-2xl' : 'bg-black'} shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 scrollbar-hide ${isScrolled ? 'bg-gradient-to-b from-black via-black/70 to-black/30 backdrop-blur-2xl' : 'bg-black'} shadow-md transition-all duration-300 py-0.25 ${isVisible ? 'opacity-100' : 'opacity-0'} ${isMenuOpen ? 'lg:opacity-100' : ''}`}>
       <nav className="px-4 mx-auto max-w-screen-xl flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="flex items-center">
@@ -105,24 +105,16 @@ const Header = () => {
                 Events
               </button>
             </li>
-            <li>
+            {/* <li>
               <button
                 onClick={() => handleNavigation("speakers-content")}
                 className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
               >
                 Speakers
               </button>
-            </li>
+            </li> */}
             <li>
-              <button
-                onClick={() => handleNavigation("sponsers-content")}
-                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
-              >
-                Sponsors
-              </button>
-            </li>
-            {/* <li> */}
-            {/* <NavLink
+            <NavLink
                 to="/speakers"
                 className={({ isActive }) =>
                   `nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 ${
@@ -134,7 +126,15 @@ const Header = () => {
               >
                 Speakers
               </NavLink>
-            </li> */}
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavigation("sponsers-content")}
+                className="nav-links text-gray-300 px-4 py-2 rounded-lg transition-all duration-300 hover:text-green-200"
+              >
+                Sponsors
+              </button>
+            </li>
             {/* <li>
             <NavLink
                 to="/sponsors"
@@ -198,9 +198,9 @@ const Header = () => {
 
       {/* Mobile Menu with Slide-Down Animation */}
       <div
-        className={`lg:hidden transition-all duration-500 ease-in-out ${
-          isMenuOpen ? "max-h-96 opacity-100 bg-black" : "max-h-0 opacity-0"
-        } shadow-md absolute top-full left-0 right-0 py-4`}
+        className={`lg:hidden transition-all duration-500 ease-in-out shadow-md absolute top-full left-0 right-0 py-4 ${
+          isMenuOpen ? 'pointer-events-auto opacity-100 max-h-96 bg-black' : 'pointer-events-none opacity-0 max-h-0'
+        }`}
       >
         <ul className="flex flex-col items-center space-y-5 text-base text-white header-text" style={headerTextStyle}>
           <li>
@@ -223,13 +223,14 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <button
-              onClick={() => { handleNavigation("speakers-content"); toggleMenu(); }}
-              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
-              style={headerTextStyle}
+            <NavLink
+            to="/speakers"
+            className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
+            onClick={toggleMenu}
+            style={headerTextStyle}
             >
               Speakers
-            </button>
+            </NavLink>
           </li>
           <li>
             <button
@@ -240,26 +241,6 @@ const Header = () => {
               Sponsors
             </button>
           </li>
-          {/* <li>
-          <NavLink
-              to="/speakers"
-              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
-              onClick={toggleMenu}
-              style={headerTextStyle}
-            >
-              Speakers
-            </NavLink>
-          </li>
-          <li>
-          <NavLink
-              to="/sponsors"
-              className="nav-links px-6 py-3 rounded-lg hover:text-yellow-400 transition-all duration-300"
-              onClick={toggleMenu}
-              style={headerTextStyle}
-            >
-              Sponsors
-            </NavLink>
-          </li> */}
           <li>
             <NavLink
               to="/contact"
@@ -272,6 +253,8 @@ const Header = () => {
           </li>
         </ul>
       </div>
+
+
     </header>
   );
 };

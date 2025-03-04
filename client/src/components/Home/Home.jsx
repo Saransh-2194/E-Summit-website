@@ -166,9 +166,9 @@ export default function Home() {
                 variants={textVariants}
                 custom={8}
               >
-                <a href="/Register" target="_blank" rel="noopener noreferrer">
-    Register Now
-  </a>
+                <a href="/Register" rel="noopener noreferrer">
+                  Register Now
+                </a>
               </motion.button>
             </div>
           </div>
@@ -183,9 +183,9 @@ export default function Home() {
               variants={textVariants}
               custom={5}
             >
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScq9gHSP_wiEcVzVx6hBbQbFXR0KCafC-KTelA7FCzXj_bviQ/viewform" target="_blank" rel="noopener noreferrer">
-    Register Now
-  </a>
+              <a href="/Register" rel="noopener noreferrer">
+                Register Now
+              </a>
             </button>
           </div>
         )}

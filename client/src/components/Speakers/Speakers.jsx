@@ -25,30 +25,57 @@ function SpeakerCard({ speaker }) {
       <h3 className="text-xl font-semibold mt-4 text-gray-800" style={cardTextStyle}>
         {speaker.name}
       </h3>
-      <p className="text-gray-600" style={cardTextStyle}>{speaker.date}</p>
+      <p className="text-gray-600 mb-4" style={cardTextStyle}>{speaker.designation}</p>
       <div className="absolute bottom-0 left-0 w-full bg-white p-4 transition-all duration-300 transform translate-y-full group-hover:translate-y-0">
         <div className="flex justify-center gap-4">
           <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
             <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6 sm:w-8 sm:h-8" />
           </a>
-          <a href={speaker.Instagram} target="_blank" rel="noopener noreferrer">
+          <a href={speaker.instagram} target="_blank" rel="noopener noreferrer">
             <img src="/instagram.png" alt="Instagram" className="w-7 h-7 sm:w-9 sm:h-9" />
           </a>
         </div>
       </div>
     </div>
-    
   );
 }
 
 export default function Speakers() {
   const speakers = [
-    { name: "Speaker 1", image: "speaker-dummy.jpg", date: "March 10, 2025", linkedin: "https://linkedin.com/speaker1", twitter: "https://twitter.com/speaker1" },
-    { name: "Speaker 2", image: "speaker-dummy.jpg", date: "March 12, 2025", linkedin: "https://linkedin.com/speaker2", twitter: "https://twitter.com/speaker2" },
-    { name: "Speaker 3", image: "speaker-dummy.jpg", date: "March 15, 2025", linkedin: "https://linkedin.com/speaker3", twitter: "https://twitter.com/speaker3" },
-    { name: "Speaker 4", image: "speaker-dummy.jpg", date: "March 18, 2025", linkedin: "https://linkedin.com/speaker4", twitter: "https://twitter.com/speaker4" },
-    { name: "Speaker 5", image: "speaker-dummy.jpg", date: "March 20, 2025", linkedin: "https://linkedin.com/speaker5", twitter: "https://twitter.com/speaker5" },
-    { name: "Speaker 6", image: "speaker-dummy.jpg", date: "March 22, 2025", linkedin: "https://linkedin.com/speaker6", twitter: "https://twitter.com/speaker6" },
+    { name: "Ekant Agarwal", 
+      image: "./Speakers/ekant.jpeg", 
+      designation: "Founder & CEO, Ekant Associates and CBMA", 
+      linkedin: "https://www.linkedin.com/in/ekant-agarwal/", 
+      instagram: "https://www.instagram.com/ekant_agarwal/" 
+    },
+    { name: "Anmol Jamwal", 
+      image: "./Speakers/anmol.jpeg", 
+      designation: "CEO, Feoster", 
+      linkedin: "https://www.linkedin.com/in/anmoljamwal/", 
+      instagram: "https://www.instagram.com/_anmol.jamwal/" 
+
+    },
+    { name: "Amit Madaan", 
+      image: "./Speakers/amit.jpeg", 
+      designation: "CEO, A-Square Media & Chairman, IBSE", 
+      linkedin: "https://www.linkedin.com/in/amitmmadaan/", 
+      instagram: "https://www.instagram.com/amit_madaan0729/" 
+
+    },
+    { name: "Hitesh Gulati", 
+      image: "./Speakers/hitesh.jpeg", 
+      designation: "Founder, Diversity Ace Business Consulting", 
+      linkedin: "https://www.linkedin.com/in/hgulati/", 
+      instagram: "https://www.instagram.com/hiteshkumargulati/" 
+
+    },
+    { name: "Rahul Lakhmani", 
+      image: "./Speakers/rahul.jpeg", 
+      designation: "Founder & CEO, Skiify", 
+      linkedin: "https://www.linkedin.com/in/rahullakhmani/", 
+      instagram: "https://www.instagram.com/drlakhmani/" 
+
+    },
   ];
 
   const pageStyle = {
@@ -65,7 +92,7 @@ export default function Speakers() {
       <div className="flex justify-center mt-10">
         <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25 " />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10">
+      <div className="flex flex-wrap justify-center gap-16 mt-10">
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index} speaker={speaker} />
         ))}
