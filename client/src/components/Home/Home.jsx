@@ -166,7 +166,7 @@ export default function Home() {
                 variants={textVariants}
                 custom={8}
               >
-                <a href="/Register" rel="noopener noreferrer">
+                <a href="/register" rel="noopener noreferrer">
                   Register Now
                 </a>
               </motion.button>
