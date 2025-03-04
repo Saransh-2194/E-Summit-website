@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "Is accommodation available for outstation participants?",
-    answer: "Yes, accommodation is available at the university for an additional fee. Participants can choose between registering with or without accommodation. However, girl students have to mandatorily register with an accommodation."
+    answer: "Yes, accommodation is available at the university, depending upon the tier chosen. Participants can choose between registering with or without accommodation. However, girl students have to mandatorily register with an accommodation."
   },
   {
     question: "What should I bring to the event?",

@@ -53,14 +53,14 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-white uppercase" style={TextStyle}>E-Summit 2025</h2>
               <ul className="text-white font-medium" style={TextStyle}>
                 <li className="mb-4">
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="text-white hover:underline"
                     rel="noreferrer"
                     style={LinkStyle}
                     >
                     Our Team
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
                   <Link to="/register" className="text-white hover:underline"

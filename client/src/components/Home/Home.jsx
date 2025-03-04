@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Events from "../Events/Events";
 import PastSpeakers from "../Speakers/PastSpeakers"; // Import the PastSpeakers component
 import AboutUs from "./About.jsx";
+import Register from "../Register/Register.jsx";
+import Takeaways from "../Takeaways/Takeaways.jsx";
 import Faqs from "../Faqs/Faqs"; // Import the Faqs component
 import Sponsers from "../Sponsers/Sponsers"; // Import the Sponsors component
 import { motion } from "framer-motion";
@@ -164,7 +166,7 @@ export default function Home() {
                 variants={textVariants}
                 custom={8}
               >
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScq9gHSP_wiEcVzVx6hBbQbFXR0KCafC-KTelA7FCzXj_bviQ/viewform" target="_blank" rel="noopener noreferrer">
+                <a href="/Register" target="_blank" rel="noopener noreferrer">
     Register Now
   </a>
               </motion.button>
@@ -208,6 +210,9 @@ export default function Home() {
       <div id="events-content" className="mt-10 px-4 md:px-8 lg:px-16 mb-10">
         <Events />
       </div>
+      {/* { <div id="events-takeawats" className="mt-20 px-4 md:px-8 lg:px-16 mb-20">
+        <Takeaways />
+      </div> } */}
       <div id="speakers-content" className="mt-10 px-4 md:px-8 lg:px-16">
         <PastSpeakers /> {/* Replaced Speakers with PastSpeakers */}
       </div>
