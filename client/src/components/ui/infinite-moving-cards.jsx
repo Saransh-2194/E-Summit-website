@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
           </li>
         ))}
       </ul>
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes scroll {
           0% {
             transform: translateX(0);

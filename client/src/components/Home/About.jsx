@@ -52,7 +52,7 @@ export default function AboutUs() {
     <div className="text-white min-h-screen px-12 sm:px-12 md:px-20 lg:px-32 py-4">
       {/* Header */}
       <div className="flex justify-center mb-20">
-        <img src="/about.png" alt="About Us" className="h-28 md:h-28 lg:h-25" />
+        <img src="/about.png" alt="About Us" className="h-15 md:h-0 lg:h-18" />
       </div>
 
       {/* FIrst Section: JUIT */}

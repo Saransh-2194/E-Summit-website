@@ -210,9 +210,9 @@ export default function Home() {
       <div id="events-content" className="mt-10 px-4 md:px-8 lg:px-16 mb-10">
         <Events />
       </div>
-      {/* { <div id="events-takeawats" className="mt-20 px-4 md:px-8 lg:px-16 mb-20">
+      <div id="events-takeawats" className="mt-20 px-4 md:px-8 lg:px-16 mb-20">
         <Takeaways />
-      </div> } */}
+      </div>
       <div id="speakers-content" className="mt-10 px-4 md:px-8 lg:px-16">
         <PastSpeakers /> {/* Replaced Speakers with PastSpeakers */}
       </div>

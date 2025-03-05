@@ -14,7 +14,7 @@ export default function PastSpeakers() {
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-2">
       <div className="flex justify-center items-center">
-        <img src="/past.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25" />
+        <img src="/past.png" alt="SPEAKERS" className="h-15 md:h-0 lg:h-18" />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 mt-10">
         {speakers.map((speaker, index) => (

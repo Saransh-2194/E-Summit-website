@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-
-
 export default function Takeaways() {
   const cardTextStyle = {
     fontFamily: "'Comic Neue', cursive",
@@ -33,7 +31,7 @@ export default function Takeaways() {
     <div className=" text-white px-12 sm:px-12 md:px-20 lg:px-32 py-4">
       {/* Header */}
       <div className=" flex justify-center items-center">
-        <img src="/takeaway.png" alt="Takeaways" className="h-28 md:h-28 lg:h-75" />
+        <img src="/takeaways.png" alt="Takeaways" className="h-15 md:h-0 lg:h-18 mb-10" />
       </div>
 
       {/* FIrst Section: JUIT */}
