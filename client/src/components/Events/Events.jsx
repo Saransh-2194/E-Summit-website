@@ -84,7 +84,7 @@ export default function Events() {
   return (
     <div className=" relative min-h-screen w-full flex flex-col items-center bg-cover bg-center bg-no-repeat">
       <div className="flex justify-center mb-3 mt-10">
-        <img src="/events.png" alt="EVENTS" className="h-15 md:h-0 lg:h-18" />
+        <img src="/events.png" alt="EVENTS" className="h-10 lg:h-18" />
       </div>
       <div className="max-w-7xl mx-8 px-10 md:px-8 lg:px-0">
         <div className="flex flex-wrap justify-center gap-16 mt-10">

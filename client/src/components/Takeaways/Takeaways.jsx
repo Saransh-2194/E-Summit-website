@@ -8,14 +8,8 @@ export default function Takeaways() {
   };
 
   const { ref: firstSectionRef, inView: firstSectionInView } = useInView({ triggerOnce: true });
-//   const { ref: secondSectionRef, inView: secondSectionInView } = useInView({ triggerOnce: true });
-//    const { ref: thirdSectionRef, inView: thirdSectionInView } = useInView({ triggerOnce: true });
-//   const { ref: newSectionRef, inView: newSectionInView } = useInView({ triggerOnce: true });
 
   const firstSectionControls = useAnimation();
-//   const secondSectionControls = useAnimation();
-//   const thirdSectionControls = useAnimation();
-//   const newSectionControls = useAnimation();
 
   useEffect(() => {
     if (firstSectionInView) {
@@ -31,10 +25,10 @@ export default function Takeaways() {
     <div className=" text-white px-12 sm:px-12 md:px-20 lg:px-32 py-4">
       {/* Header */}
       <div className=" flex justify-center items-center">
-        <img src="/takeaways.png" alt="Takeaways" className="h-15 md:h-0 lg:h-18 mb-10" />
+        <img src="/takeaways.png" alt="Takeaways" className="h-10 lg:h-18 mb-10" />
       </div>
 
-      {/* FIrst Section: JUIT */}
+      {/* First Section: JUIT */}
       <motion.div
         ref={firstSectionRef}
         initial={{ opacity: 0, x: 100 }}
@@ -62,20 +56,22 @@ export default function Takeaways() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.5, duration: 1 }} // Add delay to text animation
           >
-            <h2 className="text-black text-3xl font-bold mb-4 text-center lg:text-left ml-4 mt-8 lg:mt-0" style={cardTextStyle}>
-            <a href="https://www.juit.ac.in" className="text-black hover:underline ml-3">
-            JUIT</a></h2>
             <p className="text-black mt-4 leading-relaxed ml-4 mr-4 mb-4 lg:mb-0">
-            Jaypee University of Information Technology (JUIT) is a premier institute located in Waknaghat, Himachal Pradesh, dedicated to academic excellence and research in engineering, technology, and applied sciences. Established in 2002 under the aegis of the Jaypee Group, JUIT offers a dynamic learning environment with state-of-the-art infrastructure, modern laboratories, and a research-driven curriculum.
-            With a strong focus on innovation and entrepreneurship, JUIT fosters industry collaborations and hands-on learning experiences, preparing students for global challenges. The university is known for its vibrant campus life, technical and cultural events, and a highly qualified faculty committed to nurturing future leaders.
+              E-Summit 2025 is a platform to learn, network, and grow in an innovation-driven space. Connect with industry leaders, gain insights from founders, and compete in high-stakes events. Here’s what participants can look forward to:
             </p>
+            <ul className="list-none ml-6">
+              <li className="flex items-center text-black mb-2"><span className="w-3 h-3 bg-yellow-400 border border-black rounded-full inline-block mr-2"></span> Network with industry leaders and like-minded entrepreneurs.</li>
+              <li className="flex items-center text-black mb-2"><span className="w-3 h-3 bg-yellow-400 border border-black rounded-full inline-block mr-2"></span> Exclusive goodies & merchandise to take home.</li>
+              <li className="flex items-center text-black mb-2"><span className="w-3 h-3 bg-yellow-400 border border-black rounded-full inline-block mr-2"></span> Expert talks & workshops from startup founders and corporate pros.</li>
+              <li className="flex items-center text-black mb-2"><span className="w-3 h-3 bg-yellow-400 border border-black rounded-full inline-block mr-2"></span> Exciting competitions with big rewards and recognition.</li>
+            </ul>
           </motion.div>
         </div>
 
         {/* Image */}
         <div className="w-full lg:w-4/5">
           <a href="https://www.juit.ac.in" target="_blank" rel="noopener noreferrer">
-            <img src="/juit.jpg" alt="JUIT" className="rounded-xl shadow-lg w-full" />
+            <img src="/esummit19pic.JPG" alt="JUIT" className="rounded-xl shadow-lg w-full" />
           </a>
         </div>
       </motion.div>
