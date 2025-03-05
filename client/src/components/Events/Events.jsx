@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Events() {
   const events = [
@@ -72,16 +71,15 @@ export default function Events() {
     },
   ];
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const cardTextStyle = {
     fontFamily: "'Comic Neue', cursive",
   };
 
-  // const handleImageClick = (link) => {
-  //   navigate("/register");
-  // };
-
+  const handleImageClick = () => {
+    navigate("/register");
+  };
 
   return (
     <div className=" relative min-h-screen w-full flex flex-col items-center bg-cover bg-center bg-no-repeat">
@@ -92,18 +90,14 @@ export default function Events() {
         <div className="flex flex-wrap justify-center gap-16 mt-10">
           {events.map((event, index) => (
             <div key={index}>
-              <EventCard event={event} cardTextStyle={cardTextStyle} /*onImageClick={handleImageClick()} */ />
+              <EventCard event={event} cardTextStyle={cardTextStyle} onImageClick={handleImageClick} />
             </div>
           ))}
-          
         </div>
       </div>
     </div>
-
-    
   );
 }
-
 
 // Event Card Component
 function EventCard({ event, cardTextStyle, onImageClick }) {
@@ -140,7 +134,6 @@ function EventCard({ event, cardTextStyle, onImageClick }) {
       {/* Event Details */}
       <h3 className="text-md sm:text-xl font-bold" style={cardTextStyle}>{event.name}</h3>
       <p className="text-sm sm:text-sm mt-1 text-gray-700 text-center" style={cardTextStyle}>{event.shortDetails}</p>
-      <a href="/description" className="text-blue-500 hover:underline mt-2">Read more...</a>
       <a href={event.doclink} className="mt-1 sm:mt-3 px-3 sm:px-5 py-2 sm:py-3 bg-yellow-300 text-black rounded-md">Details</a>
     </div>
 
@@ -172,7 +165,6 @@ function EventCard({ event, cardTextStyle, onImageClick }) {
         {/* Back Side */}
         <div className="absolute w-full h-full bg-yellow-300 flex flex-col items-center justify-center p-4 text-center rotate-y-180 backface-hidden">
           <p className="text-sm sm:text-lg" style={cardTextStyle}>{event.shortDetails}</p>
-          <a href="/description" className="text-blue-500 hover:underline mt-2">Read more...</a>
           <a href={event.doclink} className="mt-2 sm:mt-4 px-2 sm:px-4 py-1 sm:py-2 bg-white text-black rounded-lg">Details</a>
         </div>
       </div>

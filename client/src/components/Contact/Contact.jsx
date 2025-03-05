@@ -6,20 +6,22 @@ const teamMembers = [
   {
     name: "Dr.Ashish Kumar",
     role: "Coordinator",
-    description: "Leading with vision and purpose.",
+    description: "Guiding with academic excellence and leadership.",
     query: "Faculty Coordinator",
     image: "./Council/ashish_sir.png",
     email: "ashish.fce@juitsolan.in",
-    linkedin: "https://www.linkedin.com/company/tiedcjuit/"
+    linkedin: "https://www.linkedin.com/company/tiedcjuit/",
+    phone: "+91 98058 84286"
   },
   {
     name: "Dr. Shruti Jain",
     role: "Coordinator",
-    description: "Leading with vision and purpose.",
+    description: "Providing strategic direction and mentorship.",
     query: "Faculty Coordinator",
     image: "./Council/shruti_mam_j.jpg",
     email: "shruti.jain@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/dr-shruti-jain-92705b130/"
+    linkedin: "https://www.linkedin.com/in/dr-shruti-jain-92705b130/",
+    phone: "+91 93180 39036"
   },
   {
     name: "Akshit Sharma",
@@ -28,16 +30,17 @@ const teamMembers = [
     query: "Overall Coordinator",
     image: "./Council/Akshit Sharma.png",
     email: "211435@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/actuallyakshit/"
+    linkedin: "https://www.linkedin.com/in/actuallyakshit/",
+    phone: "+91 788 031 3535"
   },
   {
     name: "Geetansh Singh",
     role: "Coordinator",
-    description: "Empowering the team with excellence.",
+    description: "Leading with vision and purpose.",
     query: "Overall Coordinator",
     image: "./Council/Geetansh Singh.jpg",
     email: "211418@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/geetansh-singh-/"
+    linkedin: "https://www.linkedin.com/in/geetansh-singh-/",
   },
   {
     name: "Sanya Jain",
@@ -46,7 +49,7 @@ const teamMembers = [
     query: "Events and PR",
     image: "./Council/Sanya Jain.jpg",
     email: "221030048@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/jainsanya/"
+    linkedin: "https://www.linkedin.com/in/jainsanya/",
   },
   {
     name: "Priyanshi Jain",
@@ -55,7 +58,7 @@ const teamMembers = [
     query: "Speakers",
     image: "./Council/Priyanshi Jain.jpeg",
     email: "221030024@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/jain-priyanshii/"
+    linkedin: "https://www.linkedin.com/in/jain-priyanshii/",
   },
   {
     name: "Akash Gupta",
@@ -64,7 +67,8 @@ const teamMembers = [
     query: "Sponsorships",
     image: "./Council/Akash Gupta.JPG",
     email: "221030174@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/akash-gupta-ai-ml/"
+    linkedin: "https://www.linkedin.com/in/akash-gupta-ai-ml/",
+    phone: "+91 788 031 3535"
   },
   {
     name: "Saransh Agarwal",
@@ -73,7 +77,7 @@ const teamMembers = [
     query: "Website and Technical",
     image: "./Council/Saransh Agarwal.jpg",
     email: "work.saranshagarwal@gmail.com",
-    linkedin: "https://www.linkedin.com/in/saransh-ag21/"
+    linkedin: "https://www.linkedin.com/in/saransh-ag21/",
   },
   {
     name: "Mithas Aggarwal",
@@ -82,7 +86,7 @@ const teamMembers = [
     query: "Design and Technical",
     image: "./Council/Mithas.jpg",
     email: "221030210@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/mithasaggarwal-/"
+    linkedin: "https://www.linkedin.com/in/mithasaggarwal-/",
   },
   {
     name: "Kanishka Sharma",
@@ -91,7 +95,7 @@ const teamMembers = [
     query: "Social Media",
     image: "./Council/kanishka.jpg",
     email: "221030153@juitsolan.in",
-    linkedin: "https://www.linkedin.com/in/kanishka-sharma-b6994a256/"
+    linkedin: "https://www.linkedin.com/in/kanishka-sharma-b6994a256/",
   },
   {
     name: "Akshit Sharma",
@@ -100,7 +104,7 @@ const teamMembers = [
     query: "Website and Technical",
     image: "./Council/Akshit sharma.jpg",
     email: "akshitsharmaa7322@gmail.com",
-    linkedin: "https://www.linkedin.com/in/akshit-sharmaa/"
+    linkedin: "https://www.linkedin.com/in/akshit-sharmaa/",
   },
   {
     name: "Ashmi Sharma",
@@ -109,7 +113,7 @@ const teamMembers = [
     query: "Events and PR",
     image: "./Council/Ashmi Sharma.jpg",
     email: "sharmaashmi142004@gmail.com",
-    linkedin: "https://www.linkedin.com/in/ashmi-sharma42/"
+    linkedin: "https://www.linkedin.com/in/ashmi-sharma42/",
   },
   {
     name: "Naman Mittal",
@@ -118,7 +122,8 @@ const teamMembers = [
     query: "Hackathon",
     image: "./Council/NamanMittal.jpg",
     email: "namanmittal501@gmail.com",
-    linkedin: "https://www.linkedin.com/in/naman--mittal/"
+    linkedin: "https://www.linkedin.com/in/naman--mittal/",
+    phone: "+91 88822 76873"
   },
   {
     name: "Parth Gupta",
@@ -127,7 +132,8 @@ const teamMembers = [
     query: "Hackathon",
     image: "./Council/Parth.jpg",
     email: "gupta.pag@gmail.com",
-    linkedin: "https://www.linkedin.com/in/-parth-gupta-/"
+    linkedin: "https://www.linkedin.com/in/-parth-gupta-/",
+    phone: "+91 93111 36766"
   }
 ];
 
@@ -232,6 +238,11 @@ function TeamMemberCard({ member, index }) {
           >
             <img src="/gmail.png" alt="Email" className="w-8 h-8" />
           </a>
+          {member.phone && (
+            <a href={`tel:${member.phone}`} target="_blank" rel="noopener noreferrer">
+              <img src="/phone.png" alt="Phone" className="w-8 h-8" />
+            </a>
+          )}
         </div>
       </div>
     </div>

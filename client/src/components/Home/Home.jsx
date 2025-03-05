@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Events from "../Events/Events";
 import PastSpeakers from "../Speakers/PastSpeakers"; // Import the PastSpeakers component
 import AboutUs from "./About.jsx";
@@ -13,6 +13,7 @@ import './Home.css';
 export default function Home() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,6 +53,10 @@ export default function Home() {
     backgroundAttachment: "fixed",
     minHeight: "100vh",
     fontFamily: "'Comic Neue', cursive",
+  };
+
+  const handleRegisterClick = () => {
+    navigate("/register");
   };
 
   return (
@@ -165,10 +170,9 @@ export default function Home() {
                 animate="visible"
                 variants={textVariants}
                 custom={8}
+                onClick={handleRegisterClick}
               >
-                <a href="/Register" target="_blank" rel="noopener noreferrer">
-    Register Now
-  </a>
+                Register Now
               </motion.button>
             </div>
           </div>
@@ -182,10 +186,9 @@ export default function Home() {
               animate="visible"
               variants={textVariants}
               custom={5}
+              onClick={handleRegisterClick}
             >
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScq9gHSP_wiEcVzVx6hBbQbFXR0KCafC-KTelA7FCzXj_bviQ/viewform" target="_blank" rel="noopener noreferrer">
-    Register Now
-  </a>
+              Register Now
             </button>
           </div>
         )}
