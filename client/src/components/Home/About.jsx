@@ -58,9 +58,17 @@ export default function AboutUs() {
   return (
     <div className="text-white min-h-screen px-12 sm:px-12 md:px-20 lg:px-32 py-4">
       {/* Header */}
-      <div className="flex justify-center mb-20">
-        <img src="/about.png" alt="About Us" className="h-10 lg:h-18" />
-      </div>
+      <motion.div
+          className="flex justify-center mt-5 mb-20"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/about.png" alt="About Us" className="h-10 lg:h-18" 
+          />
+        </motion.div>
 
       {/* First Section: JUIT */}
       <motion.div

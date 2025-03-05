@@ -24,9 +24,18 @@ export default function Takeaways() {
   return (
     <div className="text-white px-6 sm:px-12 md:px-20 lg:px-32 py-2">
       {/* Header */}
-      <div className="flex justify-center items-center">
-        <img src="/takeaways.png" alt="Takeaways" className="h-10 lg:h-18 mb-20" />
-      </div>
+      <motion.div
+          className="flex justify-center mt-15 mb-10"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/takeaways.png" alt="Takeaways" className="h-10 lg:h-18 mb-20" 
+          />
+        </motion.div>
+      
 
       {/* First Section: JUIT */}
       <motion.div

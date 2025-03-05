@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from 'framer-motion';
 
 function SpeakerCard({ speaker }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
@@ -89,10 +90,19 @@ export default function Speakers() {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-10" style={pageStyle}>
-      <div className="flex justify-center mt-10">
-        <img src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25 " />
-      </div>
-      <div className="flex flex-wrap justify-center gap-16 mt-10">
+      <motion.div
+          className="flex justify-center mt-25"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/speakers.png" alt="SPEAKERS" className="h-20 md:h-16 lg:h-25 " 
+          />
+        </motion.div>
+
+      <div className="flex flex-wrap justify-center gap-16 mt-25 mb-30">
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index} speaker={speaker} />
         ))}
