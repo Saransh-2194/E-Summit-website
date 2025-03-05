@@ -14,6 +14,8 @@ export default function Sponsers() {
     { name: 'royal', image: '/Past Sponsors/royal.png' },
     { name: 'headstart', image: '/Past Sponsors/headstart.png' },
     { name: 'pepsi', image: '/Past Sponsors/pepsi.png' },
+    { name: 'redbull', image: '/Past Sponsors/redbull.png' },
+    { name: 'dalal street', image: '/Past Sponsors/dalalstreet.png' },
   ];
 
   const titleControls = {
