@@ -22,10 +22,10 @@ export default function Takeaways() {
   }, [firstSectionInView, firstSectionControls]);
 
   return (
-    <div className="text-white px-6 sm:px-12 md:px-20 lg:px-32 py-4">
+    <div className="text-white px-6 sm:px-12 md:px-20 lg:px-32 py-2">
       {/* Header */}
       <div className="flex justify-center items-center">
-        <img src="/takeaways.png" alt="Takeaways" className="h-10 lg:h-18 mb-10" />
+        <img src="/takeaways.png" alt="Takeaways" className="h-10 lg:h-18 mb-20" />
       </div>
 
       {/* First Section: JUIT */}
@@ -70,9 +70,7 @@ export default function Takeaways() {
 
         {/* Image */}
         <div className="w-full lg:w-4/5">
-          <a href="https://www.juit.ac.in" target="_blank" rel="noopener noreferrer">
             <img src="/esummit19pic.JPG" alt="JUIT" className="rounded-xl shadow-lg w-full" />
-          </a>
         </div>
       </motion.div>
     </div>

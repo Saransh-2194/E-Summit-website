@@ -41,7 +41,7 @@ export default function Events() {
     },
     { 
       name: "Case Studies", 
-      image: "./Events/CaseStudy.jpeg", 
+      image: "./Events/CaseStudy.jpg", 
       shortDetails: "Two Case Studies based on what's happening around the world.",
       doclink: "https://docs.google.com/document/d/1H4d4a40R-R0P7FPVVvmp55VbU9OVxqnig68MqVlhr10/edit?usp=sharing"
     },

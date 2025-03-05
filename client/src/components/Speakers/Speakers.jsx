@@ -43,7 +43,7 @@ function SpeakerCard({ speaker }) {
 export default function Speakers() {
   const speakers = [
     { name: "Ekant Agarwal", 
-      image: "./Speakers/ekant.jpeg", 
+      image: "./Speakers/ekant.jpg", 
       designation: "Founder & CEO, Ekant Associates and CBMA", 
       linkedin: "https://www.linkedin.com/in/ekant-agarwal/", 
       instagram: "https://www.instagram.com/ekant_agarwal/" 
@@ -56,7 +56,7 @@ export default function Speakers() {
 
     },
     { name: "Amit Madaan", 
-      image: "./Speakers/amit.jpeg", 
+      image: "./Speakers/amit.jpg", 
       designation: "CEO, A-Square Media & Chairman, IBSE", 
       linkedin: "https://www.linkedin.com/in/amitmmadaan/", 
       instagram: "https://www.instagram.com/amit_madaan0729/" 

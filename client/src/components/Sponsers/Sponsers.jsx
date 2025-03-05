@@ -40,7 +40,7 @@ export default function Sponsers() {
           <motion.img
             src="/pastsponsors.png"
             alt="SPONSORS"
-            className="h-10 lg:h-18"
+            className="h-12 lg:h-22"
           />
         </motion.div>
         <div className="flex flex-col items-center w-full px-4 md:px-8 lg:px-16">

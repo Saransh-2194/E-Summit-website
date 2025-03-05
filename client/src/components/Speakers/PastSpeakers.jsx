@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import { InfiniteMovingSpeakers } from "../ui/past-speakers-animation"; 
+import { motion, AnimatePresence } from "framer-motion";
 
 const speakers = [
   { name: "BhuvanBam", position: "Content Creator | Actor", image: "./past speakers/bhuvanbam.jpeg" },
@@ -10,49 +12,55 @@ const speakers = [
   // Add more speakers as needed
 ];
 
+const titleControls = {
+  opacity: 1,
+  y: 0,
+};
+
 export default function PastSpeakers() {
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center px-4 py-2">
-      <div className="flex justify-center items-center">
-        <img src="/past.png" alt="SPEAKERS" className="h-10 lg:h-18" />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 mt-10">
-        {speakers.map((speaker, index) => (
-          <SpeakerCard key={index} speaker={speaker} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function SpeakerCard({ speaker }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const cardTextStyle = {
-    fontFamily: "'Comic Neue', cursive",
-  };
-
-  return (
-    <div className="relative group bg-white p-2 rounded-lg w-full max-w-xs shadow-lg hover:shadow-2xl transition-shadow duration-300 border-black border-4 m-4 overflow-hidden" style={{ boxShadow: '-20px 20px 0px 0px black' }}>
-      <img
-        src={speaker.image}
-        alt={speaker.name}
-        className="w-full h-70 object-cover rounded-t-lg transition duration-300"
-      />
-      <h3 className="text-xl font-semibold mt-4 text-gray-800" style={cardTextStyle}>
-        {speaker.name}
-      </h3>
-      <p className="text-gray-600" style={cardTextStyle}>{speaker.position}</p>
-    </div>
-    
+    <AnimatePresence>
+      <motion.div
+        className="relative mb-6 w-full flex flex-col items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="flex justify-center mt-25"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false }}
+        >
+          <motion.img
+            src="/past.png"
+            alt="Speakers"
+            className="h-10 lg:h-18 mb-10"
+          />
+        </motion.div>
+        <div className="flex flex-col items-center w-full px-4 md:px-8 lg:px-16">
+          <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mt-10 "
+            initial={{ opacity: 0, y: 30 }}
+            animate={titleControls}
+            transition={{ duration: 0.75}}
+          >
+          </motion.h2>
+          <InfiniteMovingSpeakers 
+            items={speakers} 
+            direction="left" 
+            speed="normal" 
+            pauseOnHover={true} 
+            className="w-full overflow-hidden"
+            itemClassName="flex-shrink-0 w-50 h-50 md:w-60 md:h-60 lg:w-80 lg:h-80"
+            imageClassName="object-cover w-full h-full rounded-xl" // Ensure the image fits the card
+            triggerOnScroll={true} // Add this prop to trigger animation on scroll
+          />
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
