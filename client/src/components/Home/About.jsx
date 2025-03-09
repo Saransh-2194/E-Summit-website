@@ -99,9 +99,9 @@ export default function AboutUs() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.5, duration: 1 }} // Add delay to text animation
           >
-            <h2 className="text-black text-3xl font-bold mb-3 text-center lg:text-left ml-4 mt-14 lg:mt-0 " style={cardTextStyle}>
-              JUIT
-            </h2>
+            <h2 className="text-black text-3xl font-bold mb-4 text-center lg:text-left ml-4 mt-8 lg:mt-0" style={cardTextStyle}>
+            <a href="https://www.juit.ac.in" className="text-black hover:underline ml-3">
+            JUIT</a></h2>
             <p className="text-black leading-relaxed ml-4 mr-4 mb-14 lg:mb-6">
             Jaypee University of Information Technology (JUIT) is a premier institute located in Waknaghat, Himachal Pradesh, dedicated to academic excellence and research in engineering, technology, and applied sciences. Established in 2002 under the aegis of the Jaypee Group, JUIT offers a dynamic learning environment with state-of-the-art infrastructure, modern laboratories, and a research-driven curriculum.
             With a strong focus on innovation and entrepreneurship, JUIT fosters industry collaborations and hands-on learning experiences, preparing students for global challenges. The university is known for its vibrant campus life, technical and cultural events, and a highly qualified faculty committed to nurturing future leaders.
@@ -157,8 +157,9 @@ export default function AboutUs() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.5, duration: 1 }} // Add delay to text animation
           >
-            <h2 className="text-black text-3xl font-bold lg:text-left ml-3 mt-10 lg:mt-0" style= {cardTextStyle}>
-              TIEDC</h2>
+            <h2 className="text-black text-3xl font-bold lg:text-left ml-2 mt-10 lg:mt-0" style= {cardTextStyle}><a href="https://www.juit.ac.in/tiedc-cell" className="text-black mb-4 inline-block hover:underline ml-3">
+              TIEDC
+            </a></h2>
             <p className="text-black mt-4 leading-relaxed ml-4 mr-1 mb-4">
               <strong>The Technology Incubation and Entrepreneurship Development Cell (TIEDC)</strong> is an initiative to foster innovation, creativity, and entrepreneurship within academic and business communities. Established in 2017 with support from the <strong>Department of Industries, Govt. of Himachal Pradesh</strong>, we aim to create a dynamic platform for individuals with innovative ideas and visions. By bridging the gap between the corporate world and aspiring entrepreneurs, we nurture an entrepreneurial ecosystem where ideas flourish and opportunities thrive, inspiring the next generation of entrepreneurs and driving positive change in our community.
             </p>

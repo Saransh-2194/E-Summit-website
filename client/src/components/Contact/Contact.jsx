@@ -31,7 +31,7 @@ const teamMembers = [
     image: "./Council/Akshit Sharma.png",
     email: "211435@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/actuallyakshit/",
-    phone: "+91 788 031 3535"
+    phone: "+91 701 800 3823"
   },
   {
     name: "Geetansh Singh",
@@ -41,6 +41,16 @@ const teamMembers = [
     image: "./Council/Geetansh Singh.jpg",
     email: "211418@juitsolan.in",
     linkedin: "https://www.linkedin.com/in/geetansh-singh-/",
+  },
+  {
+    name: "Harshit Srivastava",
+    role: "Student Mentor",
+    description: "Building bridges between ambition and achievement.",
+    query: "Overall Coordinator",
+    image: "./Council/Harshit Srivastava.JPG",
+    email: "211200@juitsolan.in",
+    linkedin: "https://www.linkedin.com/in/harshit-srivastava-b71980233",
+    phone: "+91 783 779 0837"
   },
   {
     name: "Sanya Jain",

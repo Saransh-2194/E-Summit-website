@@ -79,7 +79,7 @@ export default function Takeaways() {
 
         {/* Image */}
         <div className="w-full lg:w-4/5">
-            <img src="/esummit19pic.JPG" alt="JUIT" className="rounded-xl shadow-lg w-full" />
+            <img src="/esummit19pic2.JPG" alt="JUIT" className="rounded-xl shadow-lg w-full" />
         </div>
       </motion.div>
     </div>
