@@ -70,13 +70,6 @@ export default function Speakers() {
       instagram: "https://www.instagram.com/hiteshkumargulati/" 
 
     },
-    { name: "Rahul Lakhmani", 
-      image: "./Speakers/rahul.jpeg", 
-      designation: "Founder & CEO, Skiify", 
-      linkedin: "https://www.linkedin.com/in/rahullakhmani/", 
-      instagram: "https://www.instagram.com/drlakhmani/" 
-
-    },
   ];
 
   const pageStyle = {
